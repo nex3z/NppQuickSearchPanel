@@ -242,6 +242,7 @@
             this.lstEntry.Size = new System.Drawing.Size(381, 371);
             this.lstEntry.TabIndex = 8;
             this.lstEntry.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.lstEntry_DrawItem);
+            this.lstEntry.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lstEntry_MouseDown);
             // 
             // frmQuickSearch
             // 

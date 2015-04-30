@@ -34,8 +34,9 @@ namespace NppQuickSearchPanel
             iniFilePath = Path.Combine(iniFilePath, PluginName + ".ini");
             someSetting = (Win32.GetPrivateProfileInt("SomeSection", "SomeKey", 0, iniFilePath) != 0);
 
+            PluginBase.SetCommand(0, "Show QuickSearchPanel", myDockableDialog); idMyDlg = 0;
             PluginBase.SetCommand(1, "Help && About", myMenuFunction, new ShortcutKey(false, false, false, Keys.None));
-            PluginBase.SetCommand(0, "Show QuickSearchPanel", myDockableDialog); idMyDlg = 1;
+            
             
         }
         internal static void SetToolBarIcon()

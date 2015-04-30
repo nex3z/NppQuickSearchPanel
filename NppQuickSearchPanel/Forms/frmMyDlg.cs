@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using NppPluginNET;
 
 namespace NppQuickSearchPanel
 {
@@ -112,6 +113,42 @@ namespace NppQuickSearchPanel
             
             e.DrawFocusRectangle();
         }
+
+        private void lstEntry_MouseDown(object sender, MouseEventArgs e)
+        {
+            int index = lstEntry.SelectedIndex;
+            if (index < 0)
+                return;
+
+            string keywords = entryList[index].Keywords;
+            IntPtr curScintilla = PluginBase.GetCurrentScintilla();
+
+            if ((ModifierKeys & Keys.Control) == Keys.Control)
+            {
+                // Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_LAUNCHFINDINFILESDLG, 0, 0);
+            }
+            else if ((ModifierKeys & Keys.Shift) == Keys.Shift)
+            {
+                using(Scintilla sci = new Scintilla())
+                {
+                    int pos = sci.SearchBackward(keywords, false, false, false);
+                }
+            }
+            else
+            {
+                using (Scintilla sci = new Scintilla())
+                {
+                    int pos = sci.SearchForward(keywords, false, false, false);
+                }
+            }
+        }
+
+        enum Directrion { Forward, Backward};
+        private void SearchKeywords()
+        {
+
+        }
+
 
     }
 }
