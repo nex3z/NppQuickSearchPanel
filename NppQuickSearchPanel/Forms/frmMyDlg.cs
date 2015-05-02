@@ -24,6 +24,7 @@ namespace NppQuickSearchPanel
             chkMatchWord.Checked = config.matchWord;
             chkWrap.Checked = config.wrapSearch;
             rbtnRegExp.Checked = config.isRegExp;
+            rbtnNromal.Checked = !rbtnRegExp.Checked;
 
             string listFileName = Path.Combine(config.ConfigFilePath, Main.PluginName + ".xml");
             if (File.Exists(listFileName))
@@ -201,6 +202,16 @@ namespace NppQuickSearchPanel
 
             string listFileName = Path.Combine(config.ConfigFilePath, Main.PluginName + ".xml");
             SaveListToFile(listFileName);
+        }
+
+        private void lstEntry_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = lstEntry.SelectedIndex;
+            if (index < 0)
+                return;
+            txtKeywords.Text = entryList[index].Keywords;
+            rbtnRegExp.Checked = entryList[index].Type == KeywordsType.RegExp;
+            rbtnNromal.Checked = !rbtnRegExp.Checked;
         }
     }
 }
