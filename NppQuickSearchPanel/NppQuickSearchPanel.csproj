@@ -79,6 +79,39 @@
   <ItemGroup>
     <None Include="Properties\search_bmp.bmp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\disk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\folder_page_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\magnifier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\magnifier_bmp.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\page_find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\resultset_next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\resultset_previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\arrow_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\arrow_up.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildProjectDirectory)\DllExport\NppPlugin.DllExport.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

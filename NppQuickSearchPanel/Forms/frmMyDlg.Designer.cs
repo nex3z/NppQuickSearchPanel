@@ -38,16 +38,18 @@
             this.flpSearchMode = new System.Windows.Forms.FlowLayoutPanel();
             this.rbtnNromal = new System.Windows.Forms.RadioButton();
             this.rbtnRegExp = new System.Windows.Forms.RadioButton();
-            this.tlpButton = new System.Windows.Forms.TableLayoutPanel();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnRemove = new System.Windows.Forms.Button();
-            this.btnExport = new System.Windows.Forms.Button();
-            this.btnImport = new System.Windows.Forms.Button();
             this.lstEntry = new System.Windows.Forms.ListBox();
+            this.tsListMgmt = new System.Windows.Forms.ToolStrip();
+            this.tsbAdd = new System.Windows.Forms.ToolStripButton();
+            this.tsbRemove = new System.Windows.Forms.ToolStripButton();
+            this.tsbMoveUp = new System.Windows.Forms.ToolStripButton();
+            this.tsbMoveDown = new System.Windows.Forms.ToolStripButton();
+            this.tsbImport = new System.Windows.Forms.ToolStripButton();
+            this.tsbExport = new System.Windows.Forms.ToolStripButton();
             this.tlpDlg.SuspendLayout();
             this.flpMatchOption.SuspendLayout();
             this.flpSearchMode.SuspendLayout();
-            this.tlpButton.SuspendLayout();
+            this.tsListMgmt.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpDlg
@@ -58,8 +60,8 @@
             this.tlpDlg.Controls.Add(this.flpMatchOption, 0, 0);
             this.tlpDlg.Controls.Add(this.lblSepLine2, 0, 1);
             this.tlpDlg.Controls.Add(this.flpSearchMode, 0, 3);
-            this.tlpDlg.Controls.Add(this.tlpButton, 0, 4);
             this.tlpDlg.Controls.Add(this.lstEntry, 0, 5);
+            this.tlpDlg.Controls.Add(this.tsListMgmt, 0, 4);
             this.tlpDlg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpDlg.Location = new System.Drawing.Point(0, 0);
             this.tlpDlg.Name = "tlpDlg";
@@ -70,7 +72,7 @@
             this.tlpDlg.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpDlg.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpDlg.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDlg.Size = new System.Drawing.Size(387, 497);
+            this.tlpDlg.Size = new System.Drawing.Size(402, 497);
             this.tlpDlg.TabIndex = 0;
             // 
             // txtKeywords
@@ -78,7 +80,7 @@
             this.txtKeywords.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtKeywords.Location = new System.Drawing.Point(3, 33);
             this.txtKeywords.Name = "txtKeywords";
-            this.txtKeywords.Size = new System.Drawing.Size(381, 21);
+            this.txtKeywords.Size = new System.Drawing.Size(396, 21);
             this.txtKeywords.TabIndex = 1;
             // 
             // flpMatchOption
@@ -90,7 +92,7 @@
             this.flpMatchOption.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpMatchOption.Location = new System.Drawing.Point(3, 3);
             this.flpMatchOption.Name = "flpMatchOption";
-            this.flpMatchOption.Size = new System.Drawing.Size(381, 22);
+            this.flpMatchOption.Size = new System.Drawing.Size(396, 22);
             this.flpMatchOption.TabIndex = 2;
             // 
             // chkMatchWord
@@ -131,7 +133,7 @@
             this.lblSepLine2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblSepLine2.Location = new System.Drawing.Point(3, 28);
             this.lblSepLine2.Name = "lblSepLine2";
-            this.lblSepLine2.Size = new System.Drawing.Size(381, 2);
+            this.lblSepLine2.Size = new System.Drawing.Size(396, 2);
             this.lblSepLine2.TabIndex = 3;
             // 
             // flpSearchMode
@@ -142,7 +144,7 @@
             this.flpSearchMode.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpSearchMode.Location = new System.Drawing.Point(3, 60);
             this.flpSearchMode.Name = "flpSearchMode";
-            this.flpSearchMode.Size = new System.Drawing.Size(381, 22);
+            this.flpSearchMode.Size = new System.Drawing.Size(396, 22);
             this.flpSearchMode.TabIndex = 4;
             // 
             // rbtnNromal
@@ -167,88 +169,101 @@
             this.rbtnRegExp.Text = "Regular Expression";
             this.rbtnRegExp.UseVisualStyleBackColor = true;
             // 
-            // tlpButton
-            // 
-            this.tlpButton.AutoSize = true;
-            this.tlpButton.ColumnCount = 4;
-            this.tlpButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpButton.Controls.Add(this.btnAdd, 0, 0);
-            this.tlpButton.Controls.Add(this.btnRemove, 1, 0);
-            this.tlpButton.Controls.Add(this.btnExport, 2, 0);
-            this.tlpButton.Controls.Add(this.btnImport, 3, 0);
-            this.tlpButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpButton.Location = new System.Drawing.Point(3, 88);
-            this.tlpButton.Name = "tlpButton";
-            this.tlpButton.RowCount = 1;
-            this.tlpButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpButton.Size = new System.Drawing.Size(381, 29);
-            this.tlpButton.TabIndex = 6;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAdd.Location = new System.Drawing.Point(3, 3);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(89, 23);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnRemove
-            // 
-            this.btnRemove.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRemove.Location = new System.Drawing.Point(98, 3);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(89, 23);
-            this.btnRemove.TabIndex = 1;
-            this.btnRemove.Text = "Remove";
-            this.btnRemove.UseVisualStyleBackColor = true;
-            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
-            // 
-            // btnExport
-            // 
-            this.btnExport.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnExport.Location = new System.Drawing.Point(193, 3);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(89, 23);
-            this.btnExport.TabIndex = 2;
-            this.btnExport.Text = "Export...";
-            this.btnExport.UseVisualStyleBackColor = true;
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
-            // 
-            // btnImport
-            // 
-            this.btnImport.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnImport.Location = new System.Drawing.Point(288, 3);
-            this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(90, 23);
-            this.btnImport.TabIndex = 3;
-            this.btnImport.Text = "Import...";
-            this.btnImport.UseVisualStyleBackColor = true;
-            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
-            // 
             // lstEntry
             // 
             this.lstEntry.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstEntry.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.lstEntry.FormattingEnabled = true;
+            this.lstEntry.HorizontalScrollbar = true;
             this.lstEntry.ItemHeight = 12;
-            this.lstEntry.Location = new System.Drawing.Point(3, 123);
+            this.lstEntry.Location = new System.Drawing.Point(3, 113);
             this.lstEntry.Name = "lstEntry";
-            this.lstEntry.Size = new System.Drawing.Size(381, 371);
+            this.lstEntry.Size = new System.Drawing.Size(396, 381);
             this.lstEntry.TabIndex = 8;
             this.lstEntry.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.lstEntry_DrawItem);
             this.lstEntry.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lstEntry_MouseDown);
+            // 
+            // tsListMgmt
+            // 
+            this.tsListMgmt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tsListMgmt.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbAdd,
+            this.tsbRemove,
+            this.tsbMoveUp,
+            this.tsbMoveDown,
+            this.tsbImport,
+            this.tsbExport});
+            this.tsListMgmt.Location = new System.Drawing.Point(0, 85);
+            this.tsListMgmt.Name = "tsListMgmt";
+            this.tsListMgmt.Size = new System.Drawing.Size(402, 25);
+            this.tsListMgmt.TabIndex = 9;
+            this.tsListMgmt.Text = "toolStrip1";
+            // 
+            // tsbAdd
+            // 
+            this.tsbAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbAdd.Image = global::NppQuickSearchPanel.Properties.Resources.add;
+            this.tsbAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbAdd.Name = "tsbAdd";
+            this.tsbAdd.Size = new System.Drawing.Size(23, 22);
+            this.tsbAdd.Text = "toolStripButton1";
+            this.tsbAdd.Click += new System.EventHandler(this.tsbAdd_Click);
+            // 
+            // tsbRemove
+            // 
+            this.tsbRemove.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbRemove.Image = global::NppQuickSearchPanel.Properties.Resources.delete;
+            this.tsbRemove.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbRemove.Name = "tsbRemove";
+            this.tsbRemove.Size = new System.Drawing.Size(23, 22);
+            this.tsbRemove.Text = "toolStripButton2";
+            this.tsbRemove.Click += new System.EventHandler(this.tsbRemove_Click);
+            // 
+            // tsbMoveUp
+            // 
+            this.tsbMoveUp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbMoveUp.Image = global::NppQuickSearchPanel.Properties.Resources.arrow_down;
+            this.tsbMoveUp.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbMoveUp.Name = "tsbMoveUp";
+            this.tsbMoveUp.Size = new System.Drawing.Size(23, 22);
+            this.tsbMoveUp.Text = "toolStripButton3";
+            this.tsbMoveUp.Click += new System.EventHandler(this.tsbMoveUp_Click);
+            // 
+            // tsbMoveDown
+            // 
+            this.tsbMoveDown.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbMoveDown.Image = global::NppQuickSearchPanel.Properties.Resources.arrow_up;
+            this.tsbMoveDown.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbMoveDown.Name = "tsbMoveDown";
+            this.tsbMoveDown.Size = new System.Drawing.Size(23, 22);
+            this.tsbMoveDown.Text = "toolStripButton4";
+            this.tsbMoveDown.Click += new System.EventHandler(this.tsbMoveDown_Click);
+            // 
+            // tsbImport
+            // 
+            this.tsbImport.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbImport.Image = global::NppQuickSearchPanel.Properties.Resources.folder_page_white;
+            this.tsbImport.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbImport.Name = "tsbImport";
+            this.tsbImport.Size = new System.Drawing.Size(23, 22);
+            this.tsbImport.Text = "toolStripButton5";
+            this.tsbImport.Click += new System.EventHandler(this.tsbImport_Click);
+            // 
+            // tsbExport
+            // 
+            this.tsbExport.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbExport.Image = global::NppQuickSearchPanel.Properties.Resources.disk;
+            this.tsbExport.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbExport.Name = "tsbExport";
+            this.tsbExport.Size = new System.Drawing.Size(23, 22);
+            this.tsbExport.Text = "toolStripButton6";
+            this.tsbExport.Click += new System.EventHandler(this.tsbExport_Click);
             // 
             // frmQuickSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(387, 497);
+            this.ClientSize = new System.Drawing.Size(402, 497);
             this.Controls.Add(this.tlpDlg);
             this.Name = "frmQuickSearch";
             this.Text = "Quick Search Panel";
@@ -258,7 +273,8 @@
             this.flpMatchOption.PerformLayout();
             this.flpSearchMode.ResumeLayout(false);
             this.flpSearchMode.PerformLayout();
-            this.tlpButton.ResumeLayout(false);
+            this.tsListMgmt.ResumeLayout(false);
+            this.tsListMgmt.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -275,12 +291,14 @@
         private System.Windows.Forms.FlowLayoutPanel flpSearchMode;
         private System.Windows.Forms.RadioButton rbtnNromal;
         private System.Windows.Forms.RadioButton rbtnRegExp;
-        private System.Windows.Forms.TableLayoutPanel tlpButton;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnRemove;
-        private System.Windows.Forms.Button btnExport;
-        private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.ListBox lstEntry;
+        private System.Windows.Forms.ToolStrip tsListMgmt;
+        private System.Windows.Forms.ToolStripButton tsbAdd;
+        private System.Windows.Forms.ToolStripButton tsbRemove;
+        private System.Windows.Forms.ToolStripButton tsbMoveUp;
+        private System.Windows.Forms.ToolStripButton tsbMoveDown;
+        private System.Windows.Forms.ToolStripButton tsbImport;
+        private System.Windows.Forms.ToolStripButton tsbExport;
 
     }
 }

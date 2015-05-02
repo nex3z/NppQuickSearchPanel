@@ -20,7 +20,7 @@ namespace NppQuickSearchPanel
             lstEntry.DataSource = entryList;
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void tsbAdd_Click(object sender, EventArgs e)
         {
             string keywords = txtKeywords.Text;
             if (keywords != "")
@@ -33,38 +33,17 @@ namespace NppQuickSearchPanel
 
                 entryList.Add(newEntry);
             }
-            
+
         }
 
-        private void btnRemove_Click(object sender, EventArgs e)
+        private void tsbRemove_Click(object sender, EventArgs e)
         {
             int index = lstEntry.SelectedIndex;
             if (index >= 0)
                 entryList.RemoveAt(index);
         }
 
-        private void btnExport_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog saveFileDlg = new SaveFileDialog();
-            saveFileDlg.Filter = "xml files (*.xml)|*.xml|All files (*.*)|*.*";
-
-            if (saveFileDlg.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    TextWriter writer = new StreamWriter(saveFileDlg.FileName);
-                    XmlSerializer ser = new XmlSerializer(typeof(BindingList<Entry>));
-                    ser.Serialize(writer, entryList);
-                    writer.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Save file error: " + ex.Message);
-                }
-            }
-        }
-
-        private void btnImport_Click(object sender, EventArgs e)
+        private void tsbImport_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDlg = new OpenFileDialog();
             openFileDlg.Filter = "xml files (*.xml)|*.xml|All files (*.*)|*.*";
@@ -88,6 +67,28 @@ namespace NppQuickSearchPanel
                     lstEntry.DataSource = entryList;
                 }
             }
+        }
+
+        private void tsbExport_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDlg = new SaveFileDialog();
+            saveFileDlg.Filter = "xml files (*.xml)|*.xml|All files (*.*)|*.*";
+
+            if (saveFileDlg.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    TextWriter writer = new StreamWriter(saveFileDlg.FileName);
+                    XmlSerializer ser = new XmlSerializer(typeof(BindingList<Entry>));
+                    ser.Serialize(writer, entryList);
+                    writer.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Save file error: " + ex.Message);
+                }
+            }
+
         }
 
         private void lstEntry_DrawItem(object sender, DrawItemEventArgs e)
@@ -143,12 +144,28 @@ namespace NppQuickSearchPanel
             }
         }
 
-        enum Directrion { Forward, Backward};
-        private void SearchKeywords()
+        private void tsbMoveUp_Click(object sender, EventArgs e)
         {
+            int index = lstEntry.SelectedIndex;
+            if (index < 1)
+                return;
 
+            Entry tmp = entryList[index];
+            entryList[index] = entryList[index - 1];
+            entryList[index - 1] = tmp;
+            lstEntry.SelectedIndex = index - 1;
         }
 
+        private void tsbMoveDown_Click(object sender, EventArgs e)
+        {
+            int index = lstEntry.SelectedIndex;
+            if (index < 0 || index == entryList.Count - 1)
+                return;
 
+            Entry tmp = entryList[index];
+            entryList[index] = entryList[index + 1];
+            entryList[index + 1] = tmp;
+            lstEntry.SelectedIndex = index + 1;
+        }
     }
 }

@@ -17,10 +17,8 @@ namespace NppQuickSearchPanel
         static bool someSetting = false;
         static frmQuickSearch frmMyDlg = null;
         static int idMyDlg = -1;
-        // static Bitmap tbBmp = Properties.Resources.star;
-        // static Bitmap tbBmp_tbTab = Properties.Resources.star_bmp;
-        static Bitmap tbBmp = Properties.Resources.search;
-        static Bitmap tbBmp_tbTab = Properties.Resources.search_bmp;
+        static Bitmap tbBmp = Properties.Resources.magnifier;
+        static Bitmap tbBmp_tbTab = Properties.Resources.magnifier_bmp;
         static Icon tbIcon = null;
         #endregion
 
