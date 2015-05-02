@@ -45,6 +45,11 @@ namespace NppQuickSearchPanel
             return length;
         }
 
+        public void ScrollCaret()
+        {
+            Win32.SendMessage(curScintilla, SciMsg.SCI_SCROLLCARET, 0, 0);
+        }
+            
         public int SearchNext(string keywords, bool isRegExp, bool wholeWord, bool matchCase)
         {
             int flag = 0;
@@ -84,6 +89,7 @@ namespace NppQuickSearchPanel
 
             this.SetSearchAnchor();
             int pos = this.SearchNext(keywords, isRegExp, wholeWord, matchCase);
+            this.ScrollCaret();
             return pos;
         }
 
@@ -96,6 +102,7 @@ namespace NppQuickSearchPanel
                 this.SetSearchAnchor();
                 pos = this.SearchNext(keywords, isRegExp, wholeWord, matchCase);
             }
+            this.ScrollCaret();
             return pos;
         }
 
@@ -108,6 +115,7 @@ namespace NppQuickSearchPanel
 
             this.SetSearchAnchor();
             int pos = this.SearchPrev(keywords, isRegExp, wholeWord, matchCase);
+            this.ScrollCaret();
             return pos;
         }
 
@@ -120,6 +128,7 @@ namespace NppQuickSearchPanel
                 this.GoToPos(textLength);
                 pos = SearchBackward(keywords, isRegExp, wholeWord, matchCase);
             }
+            this.ScrollCaret();
             return pos;
         }
 
