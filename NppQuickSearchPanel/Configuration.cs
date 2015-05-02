@@ -13,7 +13,7 @@ namespace NppQuickSearchPanel
             Version = Main.PluginVersion;
             matchWord = false;
             matchCase = false;
-            wrapSearch = true;
+            wrapSearch = false;
             isRegExp = false;
             ConfigFilePath = ""; 
         }

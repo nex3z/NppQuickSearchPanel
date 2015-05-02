@@ -212,7 +212,7 @@
             this.tsbAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbAdd.Name = "tsbAdd";
             this.tsbAdd.Size = new System.Drawing.Size(23, 20);
-            this.tsbAdd.Text = "toolStripButton1";
+            this.tsbAdd.Text = "Add";
             this.tsbAdd.Click += new System.EventHandler(this.tsbAdd_Click);
             // 
             // tsbRemove
@@ -222,7 +222,7 @@
             this.tsbRemove.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbRemove.Name = "tsbRemove";
             this.tsbRemove.Size = new System.Drawing.Size(23, 20);
-            this.tsbRemove.Text = "toolStripButton2";
+            this.tsbRemove.Text = "Remove";
             this.tsbRemove.Click += new System.EventHandler(this.tsbRemove_Click);
             // 
             // toolStripSeparator1
@@ -237,7 +237,7 @@
             this.tsbMoveUp.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbMoveUp.Name = "tsbMoveUp";
             this.tsbMoveUp.Size = new System.Drawing.Size(23, 20);
-            this.tsbMoveUp.Text = "toolStripButton3";
+            this.tsbMoveUp.Text = "Move up";
             this.tsbMoveUp.Click += new System.EventHandler(this.tsbMoveUp_Click);
             // 
             // tsbMoveDown
@@ -247,7 +247,7 @@
             this.tsbMoveDown.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbMoveDown.Name = "tsbMoveDown";
             this.tsbMoveDown.Size = new System.Drawing.Size(23, 20);
-            this.tsbMoveDown.Text = "toolStripButton4";
+            this.tsbMoveDown.Text = "Move down";
             this.tsbMoveDown.Click += new System.EventHandler(this.tsbMoveDown_Click);
             // 
             // toolStripSeparator2
@@ -262,7 +262,7 @@
             this.tsbImport.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbImport.Name = "tsbImport";
             this.tsbImport.Size = new System.Drawing.Size(23, 20);
-            this.tsbImport.Text = "toolStripButton5";
+            this.tsbImport.Text = "Import";
             this.tsbImport.Click += new System.EventHandler(this.tsbImport_Click);
             // 
             // tsbExport
@@ -272,7 +272,7 @@
             this.tsbExport.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbExport.Name = "tsbExport";
             this.tsbExport.Size = new System.Drawing.Size(23, 20);
-            this.tsbExport.Text = "toolStripButton6";
+            this.tsbExport.Text = "Export";
             this.tsbExport.Click += new System.EventHandler(this.tsbExport_Click);
             // 
             // frmQuickSearch
