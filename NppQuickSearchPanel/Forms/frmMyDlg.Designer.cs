@@ -173,12 +173,13 @@
             // 
             this.lstEntry.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstEntry.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.lstEntry.Font = new System.Drawing.Font("SimSun", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lstEntry.FormattingEnabled = true;
             this.lstEntry.HorizontalScrollbar = true;
             this.lstEntry.ItemHeight = 12;
-            this.lstEntry.Location = new System.Drawing.Point(3, 113);
+            this.lstEntry.Location = new System.Drawing.Point(3, 111);
             this.lstEntry.Name = "lstEntry";
-            this.lstEntry.Size = new System.Drawing.Size(396, 381);
+            this.lstEntry.Size = new System.Drawing.Size(396, 383);
             this.lstEntry.TabIndex = 8;
             this.lstEntry.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.lstEntry_DrawItem);
             this.lstEntry.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lstEntry_MouseDown);
@@ -193,9 +194,10 @@
             this.tsbMoveDown,
             this.tsbImport,
             this.tsbExport});
+            this.tsListMgmt.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.tsListMgmt.Location = new System.Drawing.Point(0, 85);
             this.tsListMgmt.Name = "tsListMgmt";
-            this.tsListMgmt.Size = new System.Drawing.Size(402, 25);
+            this.tsListMgmt.Size = new System.Drawing.Size(402, 23);
             this.tsListMgmt.TabIndex = 9;
             this.tsListMgmt.Text = "toolStrip1";
             // 

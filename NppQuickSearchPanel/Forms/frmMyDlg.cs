@@ -121,7 +121,7 @@ namespace NppQuickSearchPanel
             if (index < 0)
                 return;
 
-            string keywords = entryList[index].Keywords;
+            Entry keywords = entryList[index];
             IntPtr curScintilla = PluginBase.GetCurrentScintilla();
 
             if ((ModifierKeys & Keys.Control) == Keys.Control)
@@ -132,14 +132,14 @@ namespace NppQuickSearchPanel
             {
                 using(Scintilla sci = new Scintilla())
                 {
-                    int pos = sci.SearchBackward(keywords, false, false, false);
+                    int pos = sci.SearchBackward(keywords.ToString(), keywords.Type == KeywordsType.RegExp, chkMatchWord.Checked, chkMatchCase.Checked);
                 }
             }
             else
             {
                 using (Scintilla sci = new Scintilla())
                 {
-                    int pos = sci.SearchForward(keywords, false, false, false);
+                    int pos = sci.SearchForward(keywords.ToString(), keywords.Type == KeywordsType.RegExp, chkMatchWord.Checked, chkMatchCase.Checked);
                 }
             }
         }
