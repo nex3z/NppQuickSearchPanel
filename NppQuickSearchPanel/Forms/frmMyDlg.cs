@@ -18,6 +18,18 @@ namespace NppQuickSearchPanel
         {
             InitializeComponent();
             lstEntry.DataSource = entryList;
+
+            Configuration config = Configuration.Instance;
+            chkMatchCase.Checked = config.matchCase;
+            chkMatchWord.Checked = config.matchWord;
+            chkWrap.Checked = config.wrapSearch;
+            rbtnRegExp.Checked = config.isRegExp;
+
+            string listFileName = Path.Combine(config.ConfigFilePath, Main.PluginName + ".xml");
+            if (File.Exists(listFileName))
+            {               
+                PopulateListFromFile(listFileName);
+            }
         }
 
         private void tsbAdd_Click(object sender, EventArgs e)
@@ -33,7 +45,6 @@ namespace NppQuickSearchPanel
 
                 entryList.Add(newEntry);
             }
-
         }
 
         private void tsbRemove_Click(object sender, EventArgs e)
@@ -50,22 +61,27 @@ namespace NppQuickSearchPanel
 
             if (openFileDlg.ShowDialog() == DialogResult.OK)
             {
-                try
-                {
-                    FileStream fs = new FileStream(openFileDlg.FileName, FileMode.Open);
-                    XmlSerializer ser = new XmlSerializer(typeof(BindingList<Entry>));
+                PopulateListFromFile(openFileDlg.FileName);
+            }
+        }
 
-                    lstEntry.DataSource = null;
-                    entryList = (BindingList<Entry>)ser.Deserialize(fs);
-                    lstEntry.DataSource = entryList;
+        private void PopulateListFromFile(string fileName)
+        {
+            try
+            {
+                FileStream fs = new FileStream(fileName, FileMode.Open);
+                XmlSerializer ser = new XmlSerializer(typeof(BindingList<Entry>));
 
-                    fs.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Open file error: " + ex.Message);
-                    lstEntry.DataSource = entryList;
-                }
+                lstEntry.DataSource = null;
+                entryList = (BindingList<Entry>)ser.Deserialize(fs);
+                lstEntry.DataSource = entryList;
+
+                fs.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Open file error: " + ex.Message);
+                lstEntry.DataSource = entryList;
             }
         }
 
@@ -76,19 +92,24 @@ namespace NppQuickSearchPanel
 
             if (saveFileDlg.ShowDialog() == DialogResult.OK)
             {
-                try
-                {
-                    TextWriter writer = new StreamWriter(saveFileDlg.FileName);
-                    XmlSerializer ser = new XmlSerializer(typeof(BindingList<Entry>));
-                    ser.Serialize(writer, entryList);
-                    writer.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Save file error: " + ex.Message);
-                }
+                SaveListToFile(saveFileDlg.FileName);
             }
 
+        }
+
+        private void SaveListToFile(string fileName)
+        {
+            try
+            {
+                TextWriter writer = new StreamWriter(fileName);
+                XmlSerializer ser = new XmlSerializer(typeof(BindingList<Entry>));
+                ser.Serialize(writer, entryList);
+                writer.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Save file error: " + ex.Message);
+            }
         }
 
         private void lstEntry_DrawItem(object sender, DrawItemEventArgs e)
@@ -166,6 +187,18 @@ namespace NppQuickSearchPanel
             entryList[index] = entryList[index + 1];
             entryList[index + 1] = tmp;
             lstEntry.SelectedIndex = index + 1;
+        }
+
+        private void frmQuickSearch_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Configuration config = Configuration.Instance;
+            config.matchCase = chkMatchCase.Checked;
+            config.matchWord = chkMatchWord.Checked;
+            config.wrapSearch = chkWrap.Checked;
+            config.isRegExp = rbtnRegExp.Checked;
+
+            string listFileName = Path.Combine(config.ConfigFilePath, Main.PluginName + ".xml");
+            SaveListToFile(listFileName);
         }
     }
 }

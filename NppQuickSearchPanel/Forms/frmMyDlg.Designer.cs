@@ -42,8 +42,10 @@
             this.tsListMgmt = new System.Windows.Forms.ToolStrip();
             this.tsbAdd = new System.Windows.Forms.ToolStripButton();
             this.tsbRemove = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbMoveUp = new System.Windows.Forms.ToolStripButton();
             this.tsbMoveDown = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbImport = new System.Windows.Forms.ToolStripButton();
             this.tsbExport = new System.Windows.Forms.ToolStripButton();
             this.tlpDlg.SuspendLayout();
@@ -190,8 +192,10 @@
             this.tsListMgmt.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbAdd,
             this.tsbRemove,
+            this.toolStripSeparator1,
             this.tsbMoveUp,
             this.tsbMoveDown,
+            this.toolStripSeparator2,
             this.tsbImport,
             this.tsbExport});
             this.tsListMgmt.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
@@ -207,7 +211,7 @@
             this.tsbAdd.Image = global::NppQuickSearchPanel.Properties.Resources.add;
             this.tsbAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbAdd.Name = "tsbAdd";
-            this.tsbAdd.Size = new System.Drawing.Size(23, 22);
+            this.tsbAdd.Size = new System.Drawing.Size(23, 20);
             this.tsbAdd.Text = "toolStripButton1";
             this.tsbAdd.Click += new System.EventHandler(this.tsbAdd_Click);
             // 
@@ -217,29 +221,39 @@
             this.tsbRemove.Image = global::NppQuickSearchPanel.Properties.Resources.delete;
             this.tsbRemove.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbRemove.Name = "tsbRemove";
-            this.tsbRemove.Size = new System.Drawing.Size(23, 22);
+            this.tsbRemove.Size = new System.Drawing.Size(23, 20);
             this.tsbRemove.Text = "toolStripButton2";
             this.tsbRemove.Click += new System.EventHandler(this.tsbRemove_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 23);
             // 
             // tsbMoveUp
             // 
             this.tsbMoveUp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbMoveUp.Image = global::NppQuickSearchPanel.Properties.Resources.arrow_down;
+            this.tsbMoveUp.Image = global::NppQuickSearchPanel.Properties.Resources.arrow_up;
             this.tsbMoveUp.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbMoveUp.Name = "tsbMoveUp";
-            this.tsbMoveUp.Size = new System.Drawing.Size(23, 22);
+            this.tsbMoveUp.Size = new System.Drawing.Size(23, 20);
             this.tsbMoveUp.Text = "toolStripButton3";
             this.tsbMoveUp.Click += new System.EventHandler(this.tsbMoveUp_Click);
             // 
             // tsbMoveDown
             // 
             this.tsbMoveDown.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbMoveDown.Image = global::NppQuickSearchPanel.Properties.Resources.arrow_up;
+            this.tsbMoveDown.Image = global::NppQuickSearchPanel.Properties.Resources.arrow_down;
             this.tsbMoveDown.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbMoveDown.Name = "tsbMoveDown";
-            this.tsbMoveDown.Size = new System.Drawing.Size(23, 22);
+            this.tsbMoveDown.Size = new System.Drawing.Size(23, 20);
             this.tsbMoveDown.Text = "toolStripButton4";
             this.tsbMoveDown.Click += new System.EventHandler(this.tsbMoveDown_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 23);
             // 
             // tsbImport
             // 
@@ -247,7 +261,7 @@
             this.tsbImport.Image = global::NppQuickSearchPanel.Properties.Resources.folder_page_white;
             this.tsbImport.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbImport.Name = "tsbImport";
-            this.tsbImport.Size = new System.Drawing.Size(23, 22);
+            this.tsbImport.Size = new System.Drawing.Size(23, 20);
             this.tsbImport.Text = "toolStripButton5";
             this.tsbImport.Click += new System.EventHandler(this.tsbImport_Click);
             // 
@@ -257,7 +271,7 @@
             this.tsbExport.Image = global::NppQuickSearchPanel.Properties.Resources.disk;
             this.tsbExport.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbExport.Name = "tsbExport";
-            this.tsbExport.Size = new System.Drawing.Size(23, 22);
+            this.tsbExport.Size = new System.Drawing.Size(23, 20);
             this.tsbExport.Text = "toolStripButton6";
             this.tsbExport.Click += new System.EventHandler(this.tsbExport_Click);
             // 
@@ -269,6 +283,7 @@
             this.Controls.Add(this.tlpDlg);
             this.Name = "frmQuickSearch";
             this.Text = "Quick Search Panel";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmQuickSearch_FormClosing);
             this.tlpDlg.ResumeLayout(false);
             this.tlpDlg.PerformLayout();
             this.flpMatchOption.ResumeLayout(false);
@@ -301,6 +316,8 @@
         private System.Windows.Forms.ToolStripButton tsbMoveDown;
         private System.Windows.Forms.ToolStripButton tsbImport;
         private System.Windows.Forms.ToolStripButton tsbExport;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
 
     }
 }

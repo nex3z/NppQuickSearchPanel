@@ -14,12 +14,12 @@ namespace NppQuickSearchPanel
         #region " Fields "
         internal const string PluginName = "NppQuickSearchPanel";
         static string iniFilePath = null;
-        static bool someSetting = false;
         static frmQuickSearch frmMyDlg = null;
         static int idMyDlg = -1;
         static Bitmap tbBmp = Properties.Resources.magnifier;
         static Bitmap tbBmp_tbTab = Properties.Resources.magnifier_bmp;
         static Icon tbIcon = null;
+        public const string PluginVersion = "0.8";
         #endregion
 
         #region " StartUp/CleanUp "
@@ -29,13 +29,10 @@ namespace NppQuickSearchPanel
             Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_GETPLUGINSCONFIGDIR, Win32.MAX_PATH, sbIniFilePath);
             iniFilePath = sbIniFilePath.ToString();
             if (!Directory.Exists(iniFilePath)) Directory.CreateDirectory(iniFilePath);
-            iniFilePath = Path.Combine(iniFilePath, PluginName + ".ini");
-            someSetting = (Win32.GetPrivateProfileInt("SomeSection", "SomeKey", 0, iniFilePath) != 0);
+            LoadConfig(iniFilePath);
 
             PluginBase.SetCommand(0, "Show QuickSearchPanel", myDockableDialog); idMyDlg = 0;
             PluginBase.SetCommand(1, "Help && About", myMenuFunction, new ShortcutKey(false, false, false, Keys.None));
-            
-            
         }
         internal static void SetToolBarIcon()
         {
@@ -48,7 +45,32 @@ namespace NppQuickSearchPanel
         }
         internal static void PluginCleanUp()
         {
-            Win32.WritePrivateProfileString("SomeSection", "SomeKey", someSetting ? "1" : "0", iniFilePath);
+            // Win32.WritePrivateProfileString("SomeSection", "SomeKey", someSetting ? "1" : "0", iniFilePath);
+            if (frmMyDlg != null)
+                frmMyDlg.Close();
+
+            SaveConfig(iniFilePath);
+        }
+        internal static void LoadConfig(string iniFilePath)
+        {           
+            Configuration config = Configuration.Instance;
+            config.ConfigFilePath = iniFilePath;
+
+            string iniFileName = Path.Combine(iniFilePath, PluginName + ".ini");
+            config.matchWord = (Win32.GetPrivateProfileInt("SearchOptions", "MatchWord", 0, iniFileName) != 0);
+            config.matchCase = (Win32.GetPrivateProfileInt("SearchOptions", "MatchCase", 0, iniFileName) != 0);
+            config.wrapSearch = (Win32.GetPrivateProfileInt("SearchOptions", "WrapSearch", 0, iniFileName) != 0);
+            config.isRegExp = (Win32.GetPrivateProfileInt("SearchOptions", "IsRegExp", 0, iniFileName) != 0);
+        }
+        internal static void SaveConfig(string iniFilePath)
+        {
+            Configuration config = Configuration.Instance;
+
+            string iniFileName = Path.Combine(iniFilePath, PluginName + ".ini");
+            Win32.WritePrivateProfileString("SearchOptions", "MatchWord", config.matchWord ? "1" : "0", iniFileName);
+            Win32.WritePrivateProfileString("SearchOptions", "MatchCase", config.matchCase ? "1" : "0", iniFileName);
+            Win32.WritePrivateProfileString("SearchOptions", "WrapSearch", config.wrapSearch ? "1" : "0", iniFileName);
+            Win32.WritePrivateProfileString("SearchOptions", "IsRegExp", config.isRegExp ? "1" : "0", iniFileName);        
         }
         #endregion
 
