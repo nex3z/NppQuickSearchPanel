@@ -153,14 +153,16 @@ namespace NppQuickSearchPanel
             {
                 using(Scintilla sci = new Scintilla())
                 {
-                    int pos = sci.SearchBackward(keywords.ToString(), keywords.Type == KeywordsType.RegExp, chkMatchWord.Checked, chkMatchCase.Checked);
+                    int pos = sci.SearchBackward(keywords.ToString(), 
+                        keywords.Type == KeywordsType.RegExp, chkMatchWord.Checked, chkMatchCase.Checked, chkWrap.Checked);
                 }
             }
             else
             {
                 using (Scintilla sci = new Scintilla())
                 {
-                    int pos = sci.SearchForward(keywords.ToString(), keywords.Type == KeywordsType.RegExp, chkMatchWord.Checked, chkMatchCase.Checked);
+                    int pos = sci.SearchForward(keywords.ToString(), 
+                        keywords.Type == KeywordsType.RegExp, chkMatchWord.Checked, chkMatchCase.Checked, chkWrap.Checked);
                 }
             }
         }

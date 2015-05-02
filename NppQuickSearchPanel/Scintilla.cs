@@ -39,6 +39,12 @@ namespace NppQuickSearchPanel
             Win32.SendMessage(curScintilla, SciMsg.SCI_SEARCHANCHOR, 0, 0);
         }
 
+        public int GetLength()
+        {
+            int length = (int)Win32.SendMessage(curScintilla, SciMsg.SCI_GETLENGTH, 0, 0);
+            return length;
+        }
+
         public int SearchNext(string keywords, bool isRegExp, bool wholeWord, bool matchCase)
         {
             int flag = 0;
@@ -81,6 +87,18 @@ namespace NppQuickSearchPanel
             return pos;
         }
 
+        public int SearchForward(string keywords, bool isRegExp, bool wholeWord, bool matchCase, bool wrapSearch)
+        {
+            int pos = SearchForward(keywords, isRegExp, wholeWord, matchCase);
+            if (pos == -1 && wrapSearch)
+            {
+                this.GoToPos(0);
+                this.SetSearchAnchor();
+                pos = this.SearchNext(keywords, isRegExp, wholeWord, matchCase);
+            }
+            return pos;
+        }
+
         public int SearchBackward(string keywords, bool isRegExp, bool wholeWord, bool matchCase)
         {
             int currPos = this.GetCurrentPos();
@@ -90,6 +108,18 @@ namespace NppQuickSearchPanel
 
             this.SetSearchAnchor();
             int pos = this.SearchPrev(keywords, isRegExp, wholeWord, matchCase);
+            return pos;
+        }
+
+        public int SearchBackward(string keywords, bool isRegExp, bool wholeWord, bool matchCase, bool wrapSearch)
+        {
+            int pos = SearchBackward(keywords, isRegExp, wholeWord, matchCase);
+            if (pos == -1 && wrapSearch)
+            {
+                int textLength = this.GetLength();
+                this.GoToPos(textLength);
+                pos = SearchBackward(keywords, isRegExp, wholeWord, matchCase);
+            }
             return pos;
         }
 
