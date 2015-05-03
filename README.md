@@ -6,7 +6,6 @@
 
 ![screenshot][1]
 
-----------
 
 ## Features
 
@@ -14,7 +13,6 @@
 - Click on your keywords to search.
 - Provide multiple search options and regular expression support.
 
-----------
 
 ## How to install 
 
@@ -22,7 +20,6 @@ Copy the **NppQuickSearchPanel.dll** to the **plugins** folder in your Notepad++
 
 **Important Note:** NppQuickSearchPanel only support the **Unicode** version of Notepad++.
 
-----------
 
 ## How to use
 
@@ -34,7 +31,6 @@ Use ![import][7]**Import**/![export][8]**Export** to load/save the current keywo
 
 Now that you have your keywords list. <kbd>Click</kbd> on keywords to search forward, <kbd>Shift</kbd> + <kbd>Click</kbd> on keywords to search backward.
 
-----------
 
 ## Credits
 
