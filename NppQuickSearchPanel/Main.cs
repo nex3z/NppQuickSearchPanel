@@ -76,7 +76,7 @@ namespace NppQuickSearchPanel
         #region " Menu functions "
         internal static void myMenuFunction()
         {
-            MessageBox.Show("NppQuickSearchPanel\nCreated by Tianxing Li ( litianxing9@gmail.com )");
+            MessageBox.Show("NppQuickSearchPanel v" + PluginVersion + "\nCreated by Tianxing Li ( litianxing9@gmail.com )");
         }
         internal static void myDockableDialog()
         {
