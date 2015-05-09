@@ -178,7 +178,7 @@
             this.lstEntry.Font = new System.Drawing.Font("SimSun", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lstEntry.FormattingEnabled = true;
             this.lstEntry.HorizontalScrollbar = true;
-            this.lstEntry.ItemHeight = 12;
+            this.lstEntry.ItemHeight = 14;
             this.lstEntry.Location = new System.Drawing.Point(3, 111);
             this.lstEntry.Name = "lstEntry";
             this.lstEntry.Size = new System.Drawing.Size(396, 383);
