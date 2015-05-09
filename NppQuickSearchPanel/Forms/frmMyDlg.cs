@@ -44,7 +44,8 @@ namespace NppQuickSearchPanel
                 else
                     newEntry = new Entry(keywords, KeywordsType.RegExp);
 
-                entryList.Add(newEntry);
+                entryList.Insert(0, newEntry);
+                lstEntry.SelectedIndex = 0;
             }
         }
 
