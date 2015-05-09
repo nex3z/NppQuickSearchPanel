@@ -140,7 +140,7 @@ namespace NppQuickSearchPanel
 
         private void lstEntry_MouseDown(object sender, MouseEventArgs e)
         {
-            int index = lstEntry.SelectedIndex;
+            int index = lstEntry.IndexFromPoint(e.X, e.Y);
             if (index < 0)
                 return;
 
