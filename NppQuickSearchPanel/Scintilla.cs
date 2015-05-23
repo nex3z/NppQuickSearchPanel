@@ -49,6 +49,11 @@ namespace NppQuickSearchPanel
         {
             Win32.SendMessage(curScintilla, SciMsg.SCI_SCROLLCARET, 0, 0);
         }
+
+        public void SetYCaretPolicy(int caretPolicy, int caretSlop)
+        {
+            Win32.SendMessage(curScintilla, SciMsg.SCI_SETYCARETPOLICY, caretPolicy, caretSlop);
+        }
             
         public int SearchNext(string keywords, bool isRegExp, bool wholeWord, bool matchCase)
         {
@@ -89,7 +94,8 @@ namespace NppQuickSearchPanel
 
             this.SetSearchAnchor();
             int pos = this.SearchNext(keywords, isRegExp, wholeWord, matchCase);
-            this.ScrollCaret();
+
+            this.ScrollCaretCentred();
             return pos;
         }
 
@@ -102,7 +108,8 @@ namespace NppQuickSearchPanel
                 this.SetSearchAnchor();
                 pos = this.SearchNext(keywords, isRegExp, wholeWord, matchCase);
             }
-            this.ScrollCaret();
+
+            this.ScrollCaretCentred();
             return pos;
         }
 
@@ -115,10 +122,11 @@ namespace NppQuickSearchPanel
 
             this.SetSearchAnchor();
             int pos = this.SearchPrev(keywords, isRegExp, wholeWord, matchCase);
-            this.ScrollCaret();
+
+            this.ScrollCaretCentred();
             return pos;
         }
-
+        
         public int SearchBackward(string keywords, bool isRegExp, bool wholeWord, bool matchCase, bool wrapSearch)
         {
             int pos = SearchBackward(keywords, isRegExp, wholeWord, matchCase);
@@ -128,8 +136,15 @@ namespace NppQuickSearchPanel
                 this.GoToPos(textLength);
                 pos = SearchBackward(keywords, isRegExp, wholeWord, matchCase);
             }
-            this.ScrollCaret();
+
+            this.ScrollCaretCentred();
             return pos;
+        }
+
+        public void ScrollCaretCentred()
+        {
+            this.SetYCaretPolicy((int)SciMsg.CARET_JUMPS + (int)SciMsg.CARET_EVEN, 0);
+            this.ScrollCaret();
         }
 
         public void Dispose()
