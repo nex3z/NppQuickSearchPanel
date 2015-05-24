@@ -111,7 +111,14 @@ namespace NppQuickSearchPanel
             }
             else
             {
-                Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_DMMSHOW, 0, frmMyDlg.Handle);
+                if (frmMyDlg.Visible)
+                {
+                    Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_DMMHIDE, 0, frmMyDlg.Handle);
+                }
+                else
+                {
+                    Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_DMMSHOW, 0, frmMyDlg.Handle);
+                }
             }
         }
         #endregion
