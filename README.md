@@ -2,7 +2,7 @@
 
 ## Description
 
-**NppQuickSearchPanel** is a notepad++ plugin which stores your favourite keywords in a list, providing fast and convenient searching. You can perform search on any keywords simply by clicking it in the list.
+**NppQuickSearchPanel** is a notepad++ plugin which stores your favourite keywords in a list, providing fast and convenient searching. You can perform search on any keywords by a click.
 
 ![screenshot][1]
 
@@ -10,7 +10,7 @@
 ## Features
 
 - Manage your frequently used keywords in a list. 
-- Click on your keywords to search.
+- Click on keywords to search.
 - Provide multiple search options and regular expression support.
 
 
@@ -37,6 +37,13 @@ Now that you have your keywords list. <kbd>Click</kbd> on keywords to search for
 - NppPlugin.NET.v0.6, the C# Notepad++ plugin template is brought to you by ufo-pu55y at [here][9].
 - The nice toolbar icons come from [famfamfam.com][10], under [Creative Commons Attribution 3.0 License][11].
 
+
+## About Notepad++
+
+Notepad++ is a free (as in "free speech" and also as in "free beer") source code editor and Notepad replacement that supports several languages. Running in the MS Windows environment, its use is governed by GPL License.
+For more information, please refer to the [official site][12].
+
+
   [1]: http://blog.nex3z.com/wp-content/uploads/2015/05/screenshot.png
   [2]: http://blog.nex3z.com/wp-content/uploads/2015/05/magnifier.png
   [3]: http://blog.nex3z.com/wp-content/uploads/2015/05/add.png
@@ -48,4 +55,4 @@ Now that you have your keywords list. <kbd>Click</kbd> on keywords to search for
   [9]: http://sourceforge.net/projects/sourcecookifier/files/other%20plugins/
   [10]: http://www.famfamfam.com/    "famfamfam.com"
   [11]: http://creativecommons.org/licenses/by/2.5/    "Creative Commons Attribution 3.0 License"
-
+  [12]: https://notepad-plus-plus.org/    "Notepad ++ Home"
