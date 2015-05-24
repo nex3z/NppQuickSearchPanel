@@ -14,7 +14,7 @@ namespace NppQuickSearchPanel
         #region " Fields "
         internal const string PluginName = "NppQuickSearchPanel";
         static string iniFilePath = null;
-        static frmQuickSearch frmMyDlg = null;
+        static frmQuickSearch frmMain = null;
         static int idMyDlg = -1;
         static Bitmap tbBmp = Properties.Resources.magnifier;
         static Bitmap tbBmp_tbTab = Properties.Resources.magnifier_bmp;
@@ -31,8 +31,8 @@ namespace NppQuickSearchPanel
             if (!Directory.Exists(iniFilePath)) Directory.CreateDirectory(iniFilePath);
             LoadConfig(iniFilePath);
 
-            PluginBase.SetCommand(0, "Show QuickSearchPanel", myDockableDialog); idMyDlg = 0;
-            PluginBase.SetCommand(1, "Help && About", myMenuFunction, new ShortcutKey(false, false, false, Keys.None));
+            PluginBase.SetCommand(0, "Show QuickSearchPanel", ShowMain); idMyDlg = 0;
+            PluginBase.SetCommand(1, "Help && About", ShowHelp, new ShortcutKey(false, false, false, Keys.None));
         }
         internal static void SetToolBarIcon()
         {
@@ -45,8 +45,8 @@ namespace NppQuickSearchPanel
         }
         internal static void PluginCleanUp()
         {
-            if (frmMyDlg != null)
-                frmMyDlg.Close();
+            if (frmMain != null)
+                frmMain.Close();
 
             SaveConfig(iniFilePath);
         }
@@ -74,15 +74,15 @@ namespace NppQuickSearchPanel
         #endregion
 
         #region " Menu functions "
-        internal static void myMenuFunction()
+        internal static void ShowHelp()
         {
             MessageBox.Show("NppQuickSearchPanel v" + PluginVersion + "\nCreated by Tianxing Li ( litianxing9@gmail.com )");
         }
-        internal static void myDockableDialog()
+        internal static void ShowMain()
         {
-            if (frmMyDlg == null)
+            if (frmMain == null)
             {
-                frmMyDlg = new frmQuickSearch();
+                frmMain = new frmQuickSearch();
 
                 using (Bitmap newBmp = new Bitmap(16, 16))
                 {
@@ -98,7 +98,7 @@ namespace NppQuickSearchPanel
                 }
 
                 NppTbData _nppTbData = new NppTbData();
-                _nppTbData.hClient = frmMyDlg.Handle;
+                _nppTbData.hClient = frmMain.Handle;
                 _nppTbData.pszName = "Quick Search";
                 _nppTbData.dlgID = idMyDlg;
                 _nppTbData.uMask = NppTbMsg.DWS_DF_CONT_RIGHT | NppTbMsg.DWS_ICONTAB | NppTbMsg.DWS_ICONBAR;
@@ -111,13 +111,13 @@ namespace NppQuickSearchPanel
             }
             else
             {
-                if (frmMyDlg.Visible)
+                if (frmMain.Visible)
                 {
-                    Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_DMMHIDE, 0, frmMyDlg.Handle);
+                    Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_DMMHIDE, 0, frmMain.Handle);
                 }
                 else
                 {
-                    Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_DMMSHOW, 0, frmMyDlg.Handle);
+                    Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_DMMSHOW, 0, frmMain.Handle);
                 }
             }
         }
