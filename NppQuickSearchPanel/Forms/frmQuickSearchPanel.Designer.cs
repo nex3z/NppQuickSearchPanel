@@ -34,7 +34,6 @@
             this.chkMatchWord = new System.Windows.Forms.CheckBox();
             this.chkMatchCase = new System.Windows.Forms.CheckBox();
             this.chkWrap = new System.Windows.Forms.CheckBox();
-            this.lblSepLine2 = new System.Windows.Forms.Label();
             this.flpSearchMode = new System.Windows.Forms.FlowLayoutPanel();
             this.rbtnNromal = new System.Windows.Forms.RadioButton();
             this.rbtnRegExp = new System.Windows.Forms.RadioButton();
@@ -58,29 +57,28 @@
             // 
             this.tlpDlg.ColumnCount = 1;
             this.tlpDlg.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDlg.Controls.Add(this.txtKeywords, 0, 2);
+            this.tlpDlg.Controls.Add(this.txtKeywords, 0, 1);
             this.tlpDlg.Controls.Add(this.flpMatchOption, 0, 0);
-            this.tlpDlg.Controls.Add(this.lblSepLine2, 0, 1);
-            this.tlpDlg.Controls.Add(this.flpSearchMode, 0, 3);
-            this.tlpDlg.Controls.Add(this.lstEntry, 0, 5);
-            this.tlpDlg.Controls.Add(this.tsListMgmt, 0, 4);
+            this.tlpDlg.Controls.Add(this.flpSearchMode, 0, 2);
+            this.tlpDlg.Controls.Add(this.lstEntry, 0, 4);
+            this.tlpDlg.Controls.Add(this.tsListMgmt, 0, 3);
             this.tlpDlg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpDlg.Location = new System.Drawing.Point(0, 0);
             this.tlpDlg.Name = "tlpDlg";
-            this.tlpDlg.RowCount = 6;
-            this.tlpDlg.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpDlg.RowCount = 5;
             this.tlpDlg.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpDlg.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpDlg.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpDlg.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpDlg.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpDlg.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpDlg.Size = new System.Drawing.Size(402, 497);
             this.tlpDlg.TabIndex = 0;
             // 
             // txtKeywords
             // 
             this.txtKeywords.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtKeywords.Location = new System.Drawing.Point(3, 33);
+            this.txtKeywords.Location = new System.Drawing.Point(3, 31);
             this.txtKeywords.Name = "txtKeywords";
             this.txtKeywords.Size = new System.Drawing.Size(396, 21);
             this.txtKeywords.TabIndex = 1;
@@ -129,22 +127,13 @@
             this.chkWrap.Text = "Wrap Search";
             this.chkWrap.UseVisualStyleBackColor = true;
             // 
-            // lblSepLine2
-            // 
-            this.lblSepLine2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblSepLine2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSepLine2.Location = new System.Drawing.Point(3, 28);
-            this.lblSepLine2.Name = "lblSepLine2";
-            this.lblSepLine2.Size = new System.Drawing.Size(396, 2);
-            this.lblSepLine2.TabIndex = 3;
-            // 
             // flpSearchMode
             // 
             this.flpSearchMode.AutoSize = true;
             this.flpSearchMode.Controls.Add(this.rbtnNromal);
             this.flpSearchMode.Controls.Add(this.rbtnRegExp);
             this.flpSearchMode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpSearchMode.Location = new System.Drawing.Point(3, 60);
+            this.flpSearchMode.Location = new System.Drawing.Point(3, 58);
             this.flpSearchMode.Name = "flpSearchMode";
             this.flpSearchMode.Size = new System.Drawing.Size(396, 22);
             this.flpSearchMode.TabIndex = 4;
@@ -179,9 +168,9 @@
             this.lstEntry.FormattingEnabled = true;
             this.lstEntry.HorizontalScrollbar = true;
             this.lstEntry.ItemHeight = 14;
-            this.lstEntry.Location = new System.Drawing.Point(3, 111);
+            this.lstEntry.Location = new System.Drawing.Point(3, 109);
             this.lstEntry.Name = "lstEntry";
-            this.lstEntry.Size = new System.Drawing.Size(396, 383);
+            this.lstEntry.Size = new System.Drawing.Size(396, 385);
             this.lstEntry.TabIndex = 8;
             this.lstEntry.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.lstEntry_DrawItem);
             this.lstEntry.SelectedIndexChanged += new System.EventHandler(this.lstEntry_SelectedIndexChanged);
@@ -200,7 +189,7 @@
             this.tsbImport,
             this.tsbExport});
             this.tsListMgmt.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.tsListMgmt.Location = new System.Drawing.Point(0, 85);
+            this.tsListMgmt.Location = new System.Drawing.Point(0, 83);
             this.tsListMgmt.Name = "tsListMgmt";
             this.tsListMgmt.Size = new System.Drawing.Size(402, 23);
             this.tsListMgmt.TabIndex = 9;
@@ -305,7 +294,6 @@
         private System.Windows.Forms.CheckBox chkMatchWord;
         private System.Windows.Forms.CheckBox chkMatchCase;
         private System.Windows.Forms.CheckBox chkWrap;
-        private System.Windows.Forms.Label lblSepLine2;
         private System.Windows.Forms.FlowLayoutPanel flpSearchMode;
         private System.Windows.Forms.RadioButton rbtnNromal;
         private System.Windows.Forms.RadioButton rbtnRegExp;
