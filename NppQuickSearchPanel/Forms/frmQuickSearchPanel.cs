@@ -149,9 +149,7 @@ namespace NppQuickSearchPanel
 
             if ((ModifierKeys & Keys.Control) == Keys.Control)
             {
-                // Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_LAUNCHFINDINFILESDLG, 0, 0);
                 Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_MENUCOMMAND, 0, NppMenuCmd.IDM_SEARCH_FIND);
-                
             }
             else if ((ModifierKeys & Keys.Shift) == Keys.Shift)
             {
