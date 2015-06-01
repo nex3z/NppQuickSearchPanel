@@ -16,6 +16,7 @@ namespace NppQuickSearchPanel
 
         public class Config
         {
+            public string version = Settings.Version;
             public bool showOnStartup = false;
             public bool matchWord = false;
             public bool matchCase = false;
