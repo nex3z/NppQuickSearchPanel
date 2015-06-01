@@ -84,6 +84,7 @@ namespace NppQuickSearchPanel
             {
                 MessageBox.Show("Open file error: " + ex.Message);
                 lstEntry.DataSource = entryList;
+                File.Delete(fileName);
             }
         }
 
@@ -111,6 +112,7 @@ namespace NppQuickSearchPanel
             catch (Exception ex)
             {
                 MessageBox.Show("Save file error: " + ex.Message);
+                File.Delete(fileName);
             }
         }
 
