@@ -19,14 +19,13 @@ namespace NppQuickSearchPanel
             InitializeComponent();
             lstEntry.DataSource = entryList;
 
-            Configuration config = Configuration.Instance;
-            chkMatchCase.Checked = config.matchCase;
-            chkMatchWord.Checked = config.matchWord;
-            chkWrap.Checked = config.wrapSearch;
-            rbtnRegExp.Checked = config.isRegExp;
+            chkMatchCase.Checked = Settings.Configs.matchCase;
+            chkMatchWord.Checked = Settings.Configs.matchWord;
+            chkWrap.Checked = Settings.Configs.wrapSearch;
+            rbtnRegExp.Checked = Settings.Configs.isRegExp;
             rbtnNromal.Checked = !rbtnRegExp.Checked;
 
-            string listFileName = Path.Combine(config.ConfigFilePath, Main.PluginName + ".xml");
+            string listFileName = Path.Combine(Settings.ConfigDir, Main.PluginName + ".xml");
             if (File.Exists(listFileName))
             {               
                 PopulateListFromFile(listFileName);
@@ -197,13 +196,13 @@ namespace NppQuickSearchPanel
 
         private void frmQuickSearch_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Configuration config = Configuration.Instance;
-            config.matchCase = chkMatchCase.Checked;
-            config.matchWord = chkMatchWord.Checked;
-            config.wrapSearch = chkWrap.Checked;
-            config.isRegExp = rbtnRegExp.Checked;
 
-            string listFileName = Path.Combine(config.ConfigFilePath, Main.PluginName + ".xml");
+            Settings.Configs.matchCase = chkMatchCase.Checked;
+            Settings.Configs.matchWord = chkMatchWord.Checked;
+            Settings.Configs.wrapSearch = chkWrap.Checked;
+            Settings.Configs.isRegExp = rbtnRegExp.Checked;
+
+            string listFileName = Path.Combine(Settings.ConfigDir, Main.PluginName + ".xml");
             SaveListToFile(listFileName);
         }
 
