@@ -45,6 +45,11 @@ namespace NppQuickSearchPanel
         }
         internal static void PluginCleanUp()
         {
+            if (frmMain.Visible)
+                Settings.Configs.showOnStartup = true;
+            else
+                Settings.Configs.showOnStartup = false;
+
             if (frmMain != null)
                 frmMain.Close();
 
@@ -52,24 +57,13 @@ namespace NppQuickSearchPanel
         }
         internal static void LoadConfig(string iniFilePath)
         {           
-            Configuration config = Configuration.Instance;
-            config.ConfigFilePath = iniFilePath;
-
             string iniFileName = Path.Combine(iniFilePath, PluginName + ".ini");
-            config.matchWord = (Win32.GetPrivateProfileInt("SearchOptions", "MatchWord", 0, iniFileName) != 0);
-            config.matchCase = (Win32.GetPrivateProfileInt("SearchOptions", "MatchCase", 0, iniFileName) != 0);
-            config.wrapSearch = (Win32.GetPrivateProfileInt("SearchOptions", "WrapSearch", 1, iniFileName) != 0);
-            config.isRegExp = (Win32.GetPrivateProfileInt("SearchOptions", "IsRegExp", 0, iniFileName) != 0);
+            Settings.ConfigDir = iniFilePath;
+            Settings.LoadConfigs();
         }
         internal static void SaveConfig(string iniFilePath)
         {
-            Configuration config = Configuration.Instance;
-
-            string iniFileName = Path.Combine(iniFilePath, PluginName + ".ini");
-            Win32.WritePrivateProfileString("SearchOptions", "MatchWord", config.matchWord ? "1" : "0", iniFileName);
-            Win32.WritePrivateProfileString("SearchOptions", "MatchCase", config.matchCase ? "1" : "0", iniFileName);
-            Win32.WritePrivateProfileString("SearchOptions", "WrapSearch", config.wrapSearch ? "1" : "0", iniFileName);
-            Win32.WritePrivateProfileString("SearchOptions", "IsRegExp", config.isRegExp ? "1" : "0", iniFileName);        
+            Settings.SaveConfigs();
         }
         #endregion
 
