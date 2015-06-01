@@ -56,6 +56,13 @@ namespace NppQuickSearchPanel
                 Main.PluginCleanUp();
                 Marshal.FreeHGlobal(_ptrPluginName);
             }
+            else if (nc.nmhdr.code == (uint)NppMsg.NPPN_READY)
+            {
+                if (Settings.Configs.showOnStartup)
+                {
+                    Main.ShowMain();
+                }
+            }
         }
     }
 }
