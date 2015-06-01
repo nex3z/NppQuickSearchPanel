@@ -43,7 +43,6 @@
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration.cs" />
     <Compile Include="DllExport\DllExportAttribute.cs" />
     <Compile Include="Entry.cs" />
     <Compile Include="Forms\frmQuickSearchPanel.cs">
