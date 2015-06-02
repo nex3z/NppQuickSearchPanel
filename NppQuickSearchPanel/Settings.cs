@@ -34,9 +34,8 @@ namespace NppQuickSearchPanel
                 Configs = (Config)ser.Deserialize(fs);
                 fs.Close();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Open config error: " + ex.Message);
                 File.Delete(configFileName);
                 Configs = new Settings.Config();
             }
@@ -52,9 +51,8 @@ namespace NppQuickSearchPanel
                 ser.Serialize(writer, Configs);
                 writer.Close();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Save config error: " + ex.Message);
                 File.Delete(configFileName);
             }
         }
