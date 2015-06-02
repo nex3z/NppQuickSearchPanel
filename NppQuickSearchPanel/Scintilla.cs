@@ -23,12 +23,23 @@ namespace NppQuickSearchPanel
             return currentPos;
         }
 
+        public void SetCurrentPos(int pos)
+        {
+            Win32.SendMessage(curScintilla, SciMsg.SCI_SETCURRENTPOS, pos, 0);
+        }
+
         public int GetAnchor()
         {
             int anchor = (int)Win32.SendMessage(curScintilla, SciMsg.SCI_GETANCHOR, 0, 0);
             return anchor;
         }
 
+        public int SetAnchor(int pos)
+        {
+            int anchor = (int)Win32.SendMessage(curScintilla, SciMsg.SCI_SETANCHOR, pos, 0);
+            return anchor;
+        }
+        
         public void GoToPos(int pos)
         {
             Win32.SendMessage(curScintilla, SciMsg.SCI_GOTOPOS, pos, 0);
@@ -95,12 +106,14 @@ namespace NppQuickSearchPanel
             int currPos = this.GetCurrentPos();
             int anchor = this.GetAnchor();
             int startPos = currPos > anchor ? currPos : anchor;
-            this.GoToPos(startPos);
+            this.SetCurrentPos(startPos);
+            this.SetAnchor(startPos);
 
             this.SetSearchAnchor();
             int pos = this.SearchNext(keywords, isRegExp, wholeWord, matchCase);
+            if (pos != -1)
+                this.ScrollCaretCentred();
 
-            this.ScrollCaretCentred();
             return pos;
         }
 
@@ -109,9 +122,12 @@ namespace NppQuickSearchPanel
             int pos = SearchForward(keywords, isRegExp, wholeWord, matchCase);
             if (pos == -1 && wrapSearch)
             {
-                this.GoToPos(0);
+                this.SetCurrentPos(0);
+                this.SetAnchor(0);
                 this.SetSearchAnchor();
-                pos = this.SearchForward(keywords, isRegExp, wholeWord, matchCase);
+                pos = this.SearchNext(keywords, isRegExp, wholeWord, matchCase);
+                if (pos != -1)
+                    this.ScrollCaretCentred();
             }
             return pos;
         }
@@ -121,12 +137,14 @@ namespace NppQuickSearchPanel
             int currPos = this.GetCurrentPos();
             int anchor = this.GetAnchor();
             int startPos = currPos < anchor ? currPos : anchor;
-            this.GoToPos(startPos);
+            this.SetCurrentPos(startPos);
+            this.SetAnchor(startPos);
 
             this.SetSearchAnchor();
             int pos = this.SearchPrev(keywords, isRegExp, wholeWord, matchCase);
+            if (pos != -1)
+                this.ScrollCaretCentred();
 
-            this.ScrollCaretCentred();
             return pos;
         }
         
@@ -136,9 +154,12 @@ namespace NppQuickSearchPanel
             if (pos == -1 && wrapSearch)
             {
                 int textLength = this.GetLength();
-                this.GoToPos(textLength);
+                this.SetCurrentPos(textLength);
+                this.SetAnchor(textLength);
                 this.SetSearchAnchor();
-                pos = this.SearchBackward(keywords, isRegExp, wholeWord, matchCase);
+                pos = this.SearchPrev(keywords, isRegExp, wholeWord, matchCase);
+                if (pos != -1)
+                    this.ScrollCaretCentred();
             }
             return pos;
         }
