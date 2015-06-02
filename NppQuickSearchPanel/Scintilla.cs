@@ -50,6 +50,11 @@ namespace NppQuickSearchPanel
             Win32.SendMessage(curScintilla, SciMsg.SCI_SCROLLCARET, 0, 0);
         }
 
+        public void SetXCaretPolicy(int caretPolicy, int caretSlop)
+        {
+            Win32.SendMessage(curScintilla, SciMsg.SCI_SETXCARETPOLICY, caretPolicy, caretSlop);
+        }
+
         public void SetYCaretPolicy(int caretPolicy, int caretSlop)
         {
             Win32.SendMessage(curScintilla, SciMsg.SCI_SETYCARETPOLICY, caretPolicy, caretSlop);
@@ -106,10 +111,8 @@ namespace NppQuickSearchPanel
             {
                 this.GoToPos(0);
                 this.SetSearchAnchor();
-                pos = this.SearchNext(keywords, isRegExp, wholeWord, matchCase);
+                pos = this.SearchForward(keywords, isRegExp, wholeWord, matchCase);
             }
-
-            this.ScrollCaretCentred();
             return pos;
         }
 
@@ -134,16 +137,16 @@ namespace NppQuickSearchPanel
             {
                 int textLength = this.GetLength();
                 this.GoToPos(textLength);
-                pos = SearchBackward(keywords, isRegExp, wholeWord, matchCase);
+                this.SetSearchAnchor();
+                pos = this.SearchBackward(keywords, isRegExp, wholeWord, matchCase);
             }
-
-            this.ScrollCaretCentred();
             return pos;
         }
 
         public void ScrollCaretCentred()
         {
             this.SetYCaretPolicy((int)SciMsg.CARET_JUMPS + (int)SciMsg.CARET_EVEN, 0);
+            this.SetXCaretPolicy((int)SciMsg.CARET_JUMPS + (int)SciMsg.CARET_EVEN, 0);
             this.ScrollCaret();
         }
 
