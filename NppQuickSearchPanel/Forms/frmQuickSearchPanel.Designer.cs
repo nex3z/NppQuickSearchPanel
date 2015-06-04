@@ -82,6 +82,7 @@
             this.txtKeywords.Name = "txtKeywords";
             this.txtKeywords.Size = new System.Drawing.Size(396, 21);
             this.txtKeywords.TabIndex = 1;
+            this.txtKeywords.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtKeywords_KeyDown);
             // 
             // flpMatchOption
             // 
