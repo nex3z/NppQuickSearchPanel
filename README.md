@@ -32,6 +32,13 @@ Use ![import][7]**Import**/![export][8]**Export** to load/save the current keywo
 Now that you have your keywords list. <kbd>Click</kbd> on keywords to search forward, <kbd>Shift</kbd> + <kbd>Click</kbd> on keywords to search backward.
 
 
+## How to build
+
+Open the project with Visual Studio 2013 or later. If you encounter a "The system cannot find the file specified" error when building the project, add the location of **NETFX 4.5.1 Tools** to your **Path** environment variable. 
+
+The Typical location of **NETFX 4.5.1 Tools** is ```C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools``` for x64 operating system and ```C:\Program Files\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools```for x86.
+
+
 ## Credits
 
 - NppPlugin.NET.v0.6, the C# Notepad++ plugin template is brought to you by ufo-pu55y at [here][9].
