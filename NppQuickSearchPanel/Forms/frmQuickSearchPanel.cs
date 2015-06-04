@@ -197,7 +197,6 @@ namespace NppQuickSearchPanel
 
         private void frmQuickSearch_FormClosing(object sender, FormClosingEventArgs e)
         {
-
             Settings.Configs.matchCase = chkMatchCase.Checked;
             Settings.Configs.matchWord = chkMatchWord.Checked;
             Settings.Configs.wrapSearch = chkWrap.Checked;
