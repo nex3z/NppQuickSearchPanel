@@ -19,7 +19,7 @@ namespace NppQuickSearchPanel
         static Bitmap tbBmp = Properties.Resources.magnifier;
         static Bitmap tbBmp_tbTab = Properties.Resources.magnifier_bmp;
         static Icon tbIcon = null;
-        public const string PluginVersion = "0.8.4";
+        public const string PluginVersion = "0.8.5";
         #endregion
 
         #region " StartUp/CleanUp "
