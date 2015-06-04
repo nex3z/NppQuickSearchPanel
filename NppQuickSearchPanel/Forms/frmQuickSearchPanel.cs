@@ -32,6 +32,25 @@ namespace NppQuickSearchPanel
             }
         }
 
+        private void txtKeywords_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string keywords = txtKeywords.Text;
+                if (keywords != "")
+                {
+                    Entry newEntry = null;
+                    if (rbtnNromal.Checked)
+                        newEntry = new Entry(keywords, KeywordsType.Normal);
+                    else
+                        newEntry = new Entry(keywords, KeywordsType.RegExp);
+
+                    entryList.Insert(0, newEntry);
+                    lstEntry.SelectedIndex = 0;
+                }
+            }
+        }
+
         private void tsbAdd_Click(object sender, EventArgs e)
         {
             string keywords = txtKeywords.Text;
