@@ -48,6 +48,7 @@ namespace NppQuickSearchPanel
                     entryList.Insert(0, newEntry);
                     lstEntry.SelectedIndex = 0;
                 }
+                e.SuppressKeyPress = true;
             }
         }
 
