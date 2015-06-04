@@ -36,7 +36,10 @@ Now that you have your keywords list. <kbd>Click</kbd> on keywords to search for
 
 Open the project with Visual Studio 2013 or later. If you encounter a "The system cannot find the file specified" error when building the project, add the location of **NETFX 4.5.1 Tools** to your **Path** environment variable. 
 
-The Typical location of **NETFX 4.5.1 Tools** is ```C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools``` for x64 operating system and ```C:\Program Files\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools```for x86.
+For 64-bit system, the typical location of **NETFX 4.5.1 Tools** is 
+```C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools```.
+For 32-bit system, the typical location is 
+```C:\Program Files\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools```.
 
 
 ## Credits
