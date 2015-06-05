@@ -25,11 +25,10 @@ Copy the **NppQuickSearchPanel.dll** to the **plugins** folder in your Notepad++
 
 Open up Notepad++, click the ![pluginicon][2]**Show QuickSearchPanel** button in the toolbar, or use menu **Plugins / NppQuickSearchPanel / Show QuickSearchPanel**.
 
-Input keywords and click ![add][3]**add** button to add it to the list. Use ![remove][4]**remove** button to remove the selected keywords. You can also change the order of selected keywords by using ![moveup][5]**Move up** and ![movedown][6]**Move down**.
-
-Use ![import][7]**Import**/![export][8]**Export** to load/save the current keywords list.
-
-Now that you have your keywords list. <kbd>Click</kbd> on keywords to search forward, <kbd>Shift</kbd> + <kbd>Click</kbd> on keywords to search backward.
+- Input keyword in the text box. Click ![add][3]**add** button or just press <kbd>**Enter**</kbd> to add the keyword to the list. 
+- <kbd>**Click**</kbd> on the keyword in the list to search forward. <kbd>**Shift**</kbd> + <kbd>**Click**</kbd> to search backward. <kbd>**Ctrl**</kbd> + <kbd>**Click**</kbd> to copy to clipboard.
+- Use ![remove][4]**remove** button to remove the selected keyword. You can also change the order of selected keyword by using ![moveup][5]**Move up** and ![movedown][6]**Move down**.
+- Use ![import][7]**Import**/![export][8]**Export** to load/save current keywords list.
 
 
 ## How to build
