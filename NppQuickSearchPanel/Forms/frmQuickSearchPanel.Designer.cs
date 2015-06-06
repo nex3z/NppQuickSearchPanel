@@ -44,6 +44,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbMoveUp = new System.Windows.Forms.ToolStripButton();
             this.tsbMoveDown = new System.Windows.Forms.ToolStripButton();
+            this.tsbRemoveDuplItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbImport = new System.Windows.Forms.ToolStripButton();
             this.tsbExport = new System.Windows.Forms.ToolStripButton();
@@ -186,6 +187,7 @@
             this.toolStripSeparator1,
             this.tsbMoveUp,
             this.tsbMoveDown,
+            this.tsbRemoveDuplItem,
             this.toolStripSeparator2,
             this.tsbImport,
             this.tsbExport});
@@ -240,6 +242,16 @@
             this.tsbMoveDown.Size = new System.Drawing.Size(23, 20);
             this.tsbMoveDown.Text = "Move down";
             this.tsbMoveDown.Click += new System.EventHandler(this.tsbMoveDown_Click);
+            //
+            //tsbRemoveDuplItem
+            //
+            this.tsbRemoveDuplItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbRemoveDuplItem.Image = global::NppQuickSearchPanel.Properties.Resources.delete_repeat;
+            this.tsbRemoveDuplItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbRemoveDuplItem.Name = "tsbRemoveDuplItem";
+            this.tsbRemoveDuplItem.Size = new System.Drawing.Size(23, 20);
+            this.tsbRemoveDuplItem.Text = "Remove duplicates";
+            this.tsbRemoveDuplItem.Click += new System.EventHandler(this.tsbRemoveDuplItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -304,6 +316,7 @@
         private System.Windows.Forms.ToolStripButton tsbRemove;
         private System.Windows.Forms.ToolStripButton tsbMoveUp;
         private System.Windows.Forms.ToolStripButton tsbMoveDown;
+        private System.Windows.Forms.ToolStripButton tsbRemoveDuplItem;
         private System.Windows.Forms.ToolStripButton tsbImport;
         private System.Windows.Forms.ToolStripButton tsbExport;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;

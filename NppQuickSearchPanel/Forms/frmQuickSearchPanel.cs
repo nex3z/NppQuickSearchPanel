@@ -215,6 +215,37 @@ namespace NppQuickSearchPanel
             lstEntry.SelectedIndex = index + 1;
         }
 
+        private void tsbRemoveDuplItem_Click(object sender, EventArgs e)
+        {
+            DialogResult MsgBoxResult;
+            if (entryList.Count <= 0)
+            {
+                return;
+            }
+            MsgBoxResult = MessageBox.Show("You are trying to remove the duplicated search list.\nAre you Sure?",
+                "Prompt",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Exclamation,
+                MessageBoxDefaultButton.Button1);
+            if (MsgBoxResult == DialogResult.Yes)
+            {
+                for(int index = 0;index < entryList.Count-1;index++)
+                {
+                    for (int j = index;j >= 0;j--)
+                    {
+                        if (entryList[index+1].ToString().Equals(entryList[j].ToString()))
+                        {
+                            entryList.RemoveAt(index+1);
+                            index--;
+                            break;
+                        }
+                            
+                    }    
+                }
+                
+            }
+        }
+
         private void frmQuickSearch_FormClosing(object sender, FormClosingEventArgs e)
         {
             Settings.Configs.matchCase = chkMatchCase.Checked;
