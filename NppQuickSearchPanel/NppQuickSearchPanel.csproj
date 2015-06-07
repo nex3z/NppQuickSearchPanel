@@ -10,7 +10,7 @@
     <RootNamespace>NppQuickSearchPanel</RootNamespace>
     <AssemblyName>NppQuickSearchPanel</AssemblyName>
     <OutputPath>bin\Debug\</OutputPath>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
