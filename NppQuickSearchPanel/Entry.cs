@@ -7,8 +7,11 @@ namespace NppQuickSearchPanel
     public enum KeywordsType { Normal, RegExp };
 
     [Serializable]
-    public class Entry
+    public class Entry : IEquatable<Entry>
     {
+        public string Keywords { get; set; }
+        public KeywordsType Type { get; set; }
+
         public Entry(string keywords, KeywordsType type)
         {
             Keywords = keywords;
@@ -22,7 +25,23 @@ namespace NppQuickSearchPanel
             return Keywords;
         }
 
-        public string Keywords { get; set; }
-        public KeywordsType Type { get; set; }
+        public bool Equals(Entry other)
+        {
+            if ((this.Keywords == other.Keywords) && (this.Type == other.Type))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            int hashKeywords = Keywords.GetHashCode();
+            int hashType = Type.GetHashCode();
+            return hashKeywords ^ hashType;
+        }
     }
 }

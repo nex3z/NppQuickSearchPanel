@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using System.Linq;
 using NppPluginNET;
 
 namespace NppQuickSearchPanel
@@ -217,32 +218,17 @@ namespace NppQuickSearchPanel
 
         private void tsbRemoveDuplItem_Click(object sender, EventArgs e)
         {
-            DialogResult MsgBoxResult;
-            if (entryList.Count <= 0)
-            {
-                return;
-            }
-            MsgBoxResult = MessageBox.Show("You are trying to remove the duplicated search list.\nAre you Sure?",
-                "Prompt",
+            DialogResult MsgBoxResult = MessageBox.Show(
+                "Are you sure you want to delete duplicated keywords in the list?",
+                "Delete duplicated keywords",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Exclamation,
                 MessageBoxDefaultButton.Button1);
+
             if (MsgBoxResult == DialogResult.Yes)
             {
-                for(int index = 0;index < entryList.Count-1;index++)
-                {
-                    for (int j = index;j >= 0;j--)
-                    {
-                        if (entryList[index+1].ToString().Equals(entryList[j].ToString()))
-                        {
-                            entryList.RemoveAt(index+1);
-                            index--;
-                            break;
-                        }
-                            
-                    }    
-                }
-                
+                entryList = new BindingList<Entry>(entryList.Distinct().ToList());
+                lstEntry.DataSource = entryList;
             }
         }
 
