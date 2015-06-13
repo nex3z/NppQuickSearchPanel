@@ -46,6 +46,13 @@ C:\Program Files\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools
 ```
 
 
+## Contributors
+
+[nex3z](https://github.com/nex3z)
+
+[June3Ningxu](https://github.com/June3Ningxu)
+
+
 ## Credits
 
 - NppPlugin.NET.v0.6, the C# Notepad++ plugin template is brought to you by ufo-pu55y at [here][9].
