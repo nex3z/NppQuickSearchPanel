@@ -173,7 +173,6 @@ namespace NppQuickSearchPanel
             }
 
             Entry keywords = entryList[index];
-            IntPtr curScintilla = PluginBase.GetCurrentScintilla();
 
             if ((ModifierKeys & Keys.Control) == Keys.Control)
             {
