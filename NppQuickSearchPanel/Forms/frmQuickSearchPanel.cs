@@ -13,7 +13,8 @@ namespace NppQuickSearchPanel
 {
     public partial class frmQuickSearch : Form
     {
-        BindingList<Entry> entryList = new BindingList<Entry>(); 
+        BindingList<Entry> entryList = new BindingList<Entry>();
+        int lastSelectedIndex = -1;
 
         public frmQuickSearch()
         {
@@ -165,6 +166,11 @@ namespace NppQuickSearchPanel
             int index = lstEntry.IndexFromPoint(e.X, e.Y);
             if (index < 0)
                 return;
+            else if (index != lastSelectedIndex)
+            {
+                lastSelectedIndex = index;
+                return;
+            }
 
             Entry keywords = entryList[index];
             IntPtr curScintilla = PluginBase.GetCurrentScintilla();
