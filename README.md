@@ -65,14 +65,14 @@ Notepad++ is a free (as in "free speech" and also as in "free beer") source code
 For more information, please refer to the [official site][12].
 
 
-  [1]: http://blog.nex3z.com/wp-content/uploads/2015/05/screenshot.png
-  [2]: http://blog.nex3z.com/wp-content/uploads/2015/05/magnifier.png
-  [3]: http://blog.nex3z.com/wp-content/uploads/2015/05/add.png
-  [4]: http://blog.nex3z.com/wp-content/uploads/2015/05/delete.png
-  [5]: http://blog.nex3z.com/wp-content/uploads/2015/05/arrow_up.png
-  [6]: http://blog.nex3z.com/wp-content/uploads/2015/05/arrow_down.png
-  [7]: http://blog.nex3z.com/wp-content/uploads/2015/05/folder_page_white.png
-  [8]: http://blog.nex3z.com/wp-content/uploads/2015/05/disk.png
+  [1]: https://github.com/nex3z/NppQuickSearchPanel/blob/master/images/screenshot.png
+  [2]: https://github.com/nex3z/NppQuickSearchPanel/blob/master/images/icons/magnifier.png
+  [3]: https://github.com/nex3z/NppQuickSearchPanel/blob/master/images/icons/add.png
+  [4]: https://github.com/nex3z/NppQuickSearchPanel/blob/master/images/icons/delete.png
+  [5]: https://github.com/nex3z/NppQuickSearchPanel/blob/master/images/icons/arrow_up.png
+  [6]: https://github.com/nex3z/NppQuickSearchPanel/blob/master/images/icons/arrow_down.png
+  [7]: https://github.com/nex3z/NppQuickSearchPanel/blob/master/images/icons/folder_page_white.png
+  [8]: https://github.com/nex3z/NppQuickSearchPanel/blob/master/images/icons/disk.png
   [9]: http://sourceforge.net/projects/sourcecookifier/files/other%20plugins/
   [10]: http://www.famfamfam.com/    "famfamfam.com"
   [11]: http://creativecommons.org/licenses/by/2.5/    "Creative Commons Attribution 3.0 License"
