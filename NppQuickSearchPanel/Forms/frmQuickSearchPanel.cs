@@ -164,16 +164,17 @@ namespace NppQuickSearchPanel
         private void lstEntry_MouseDown(object sender, MouseEventArgs e)
         {
             int index = lstEntry.IndexFromPoint(e.X, e.Y);
+            bool isSelectedIndexChanged = false;
+
             if (index < 0)
                 return;
             else if (index != lastSelectedIndex)
             {
+                isSelectedIndexChanged = true;
                 lastSelectedIndex = index;
-                return;
             }
 
             Entry keywords = entryList[index];
-
             if ((ModifierKeys & Keys.Control) == Keys.Control)
             {
                 lstEntry.SetSelected(index, true);
@@ -189,10 +190,13 @@ namespace NppQuickSearchPanel
             }
             else
             {
-                using (Scintilla sci = new Scintilla())
+                if (!isSelectedIndexChanged)
                 {
-                    int pos = sci.SearchForward(keywords.ToString(), 
-                        keywords.Type == KeywordsType.RegExp, chkMatchWord.Checked, chkMatchCase.Checked, chkWrap.Checked);
+                    using (Scintilla sci = new Scintilla())
+                    {
+                        int pos = sci.SearchForward(keywords.ToString(),
+                            keywords.Type == KeywordsType.RegExp, chkMatchWord.Checked, chkMatchCase.Checked, chkWrap.Checked);
+                    }
                 }
             }
         }
