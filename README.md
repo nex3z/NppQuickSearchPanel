@@ -66,13 +66,13 @@ For more information, please refer to the [official site][12].
 
 
   [1]: images/screenshot.png
-  [2]: images/magnifier.png
-  [3]: images/add.png
-  [4]: images/delete.png
-  [5]: images/arrow_up.png
-  [6]: images/arrow_down.png
-  [7]: images/folder_page_white.png
-  [8]: images/disk.png
+  [2]: images/icons/magnifier.png
+  [3]: images/icons/add.png
+  [4]: images/icons/delete.png
+  [5]: images/icons/arrow_up.png
+  [6]: images/icons/arrow_down.png
+  [7]: images/icons/folder_page_white.png
+  [8]: images/icons/disk.png
   [9]: http://sourceforge.net/projects/sourcecookifier/files/other%20plugins/
   [10]: http://www.famfamfam.com/    "famfamfam.com"
   [11]: http://creativecommons.org/licenses/by/2.5/    "Creative Commons Attribution 3.0 License"
