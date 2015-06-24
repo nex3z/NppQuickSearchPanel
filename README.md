@@ -65,7 +65,7 @@ Notepad++ is a free (as in "free speech" and also as in "free beer") source code
 For more information, please refer to the [official site][12].
 
 
-  [1]: https://github.com/nex3z/NppQuickSearchPanel/blob/master/images/screenshot.png
+  [1]: images/screenshot.png
   [2]: https://github.com/nex3z/NppQuickSearchPanel/blob/master/images/icons/magnifier.png
   [3]: https://github.com/nex3z/NppQuickSearchPanel/blob/master/images/icons/add.png
   [4]: https://github.com/nex3z/NppQuickSearchPanel/blob/master/images/icons/delete.png
