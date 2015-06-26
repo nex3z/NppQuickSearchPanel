@@ -48,9 +48,9 @@ C:\Program Files\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools
 
 ## Contributors
 
-[nex3z](https://github.com/nex3z)
+- [nex3z](https://github.com/nex3z)
 
-[June3Ningxu](https://github.com/June3Ningxu)
+- [June3Ningxu](https://github.com/June3Ningxu)
 
 
 ## Credits
