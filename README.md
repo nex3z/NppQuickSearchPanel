@@ -33,7 +33,7 @@ Open up Notepad++, click the ![pluginicon][2]**Show QuickSearchPanel** button in
 
 ## How to build
 
-Open the project with Visual Studio 2013 or later. If you encounter a "The system cannot find the file specified" error when building the project, add the location of **NETFX 4.5.1 Tools** to your **Path** environment variable. 
+Build with Visual Studio 2013 or later. If you encounter a "The system cannot find the file specified" error when building the project, add the location of **NETFX 4.5.1 Tools** to your **Path** environment variable. 
 
 For 64-bit system, the typical location of **NETFX 4.5.1 Tools** is 
 ```
@@ -55,7 +55,7 @@ C:\Program Files\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools
 
 ## Credits
 
-- NppPlugin.NET.v0.6, the C# Notepad++ plugin template is brought to you by ufo-pu55y at [here][9].
+- [NppPlugin.NET.v0.6][9], the C# Notepad++ plugin template is brought to you by ufo-pu55y.
 - The nice toolbar icons come from [famfamfam.com][10], under [Creative Commons Attribution 3.0 License][11].
 
 
