@@ -33,7 +33,7 @@ Open up Notepad++, click the ![pluginicon][2]**Show QuickSearchPanel** button in
 
 ## How to build
 
-Open the project with Visual Studio 2013 or later. If you encounter a "The system cannot find the file specified" error when building the project, add the location of **NETFX 4.5.1 Tools** to your **Path** environment variable. 
+Build with Visual Studio 2013 or later. If you encounter a "The system cannot find the file specified" error when building the project, add the location of **NETFX 4.5.1 Tools** to your **Path** environment variable. 
 
 For 64-bit system, the typical location of **NETFX 4.5.1 Tools** is 
 ```
@@ -48,14 +48,14 @@ C:\Program Files\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools
 
 ## Contributors
 
-[nex3z](https://github.com/nex3z)
+- [nex3z](https://github.com/nex3z)
 
-[June3Ningxu](https://github.com/June3Ningxu)
+- [June3Ningxu](https://github.com/June3Ningxu)
 
 
 ## Credits
 
-- NppPlugin.NET.v0.6, the C# Notepad++ plugin template is brought to you by ufo-pu55y at [here][9].
+- [NppPlugin.NET.v0.6][9], the C# Notepad++ plugin template is brought to you by ufo-pu55y.
 - The nice toolbar icons come from [famfamfam.com][10], under [Creative Commons Attribution 3.0 License][11].
 
 
@@ -65,14 +65,14 @@ Notepad++ is a free (as in "free speech" and also as in "free beer") source code
 For more information, please refer to the [official site][12].
 
 
-  [1]: https://github.com/nex3z/NppQuickSearchPanel/blob/master/images/screenshot.png
-  [2]: https://github.com/nex3z/NppQuickSearchPanel/blob/master/images/icons/magnifier.png
-  [3]: https://github.com/nex3z/NppQuickSearchPanel/blob/master/images/icons/add.png
-  [4]: https://github.com/nex3z/NppQuickSearchPanel/blob/master/images/icons/delete.png
-  [5]: https://github.com/nex3z/NppQuickSearchPanel/blob/master/images/icons/arrow_up.png
-  [6]: https://github.com/nex3z/NppQuickSearchPanel/blob/master/images/icons/arrow_down.png
-  [7]: https://github.com/nex3z/NppQuickSearchPanel/blob/master/images/icons/folder_page_white.png
-  [8]: https://github.com/nex3z/NppQuickSearchPanel/blob/master/images/icons/disk.png
+  [1]: images/screenshot.png
+  [2]: images/icons/magnifier.png
+  [3]: images/icons/add.png
+  [4]: images/icons/delete.png
+  [5]: images/icons/arrow_up.png
+  [6]: images/icons/arrow_down.png
+  [7]: images/icons/folder_page_white.png
+  [8]: images/icons/disk.png
   [9]: http://sourceforge.net/projects/sourcecookifier/files/other%20plugins/
   [10]: http://www.famfamfam.com/    "famfamfam.com"
   [11]: http://creativecommons.org/licenses/by/2.5/    "Creative Commons Attribution 3.0 License"
