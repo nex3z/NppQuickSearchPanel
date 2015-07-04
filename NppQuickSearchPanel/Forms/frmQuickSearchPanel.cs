@@ -201,6 +201,16 @@ namespace NppQuickSearchPanel
             }
         }
 
+        private void lstEntry_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                int index = lstEntry.SelectedIndex;
+                if (index >= 0)
+                    entryList.RemoveAt(index);
+            }
+        }
+
         private void tsbMoveUp_Click(object sender, EventArgs e)
         {
             int index = lstEntry.SelectedIndex;

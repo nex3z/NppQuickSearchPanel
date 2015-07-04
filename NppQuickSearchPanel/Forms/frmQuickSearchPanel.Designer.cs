@@ -176,6 +176,7 @@
             this.lstEntry.TabIndex = 8;
             this.lstEntry.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.lstEntry_DrawItem);
             this.lstEntry.SelectedIndexChanged += new System.EventHandler(this.lstEntry_SelectedIndexChanged);
+            this.lstEntry.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lstEntry_KeyDown);
             this.lstEntry.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lstEntry_MouseDown);
             // 
             // tsListMgmt
@@ -242,9 +243,9 @@
             this.tsbMoveDown.Size = new System.Drawing.Size(23, 20);
             this.tsbMoveDown.Text = "Move down";
             this.tsbMoveDown.Click += new System.EventHandler(this.tsbMoveDown_Click);
-            //
-            //tsbRemoveDuplItem
-            //
+            // 
+            // tsbRemoveDuplItem
+            // 
             this.tsbRemoveDuplItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsbRemoveDuplItem.Image = global::NppQuickSearchPanel.Properties.Resources.delete_repeat;
             this.tsbRemoveDuplItem.ImageTransparentColor = System.Drawing.Color.Magenta;
