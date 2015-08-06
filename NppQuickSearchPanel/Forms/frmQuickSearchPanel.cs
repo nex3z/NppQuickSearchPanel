@@ -179,6 +179,8 @@ namespace NppQuickSearchPanel
             {
                 lstEntry.SetSelected(index, true);
                 Clipboard.SetText(keywords.ToString());
+                Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.IDM_SEARCH_FIND, 0, 0);
+                SendKeys.SendWait("^{v}");
             }
             else if ((ModifierKeys & Keys.Shift) == Keys.Shift)
             {
