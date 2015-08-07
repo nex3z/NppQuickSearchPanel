@@ -179,7 +179,7 @@ namespace NppQuickSearchPanel
             {
                 lstEntry.SetSelected(index, true);
                 Clipboard.SetText(keywords.ToString());
-                Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.IDM_SEARCH_FIND, 0, 0);
+                Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_MENUCOMMAND, 0, NppMenuCmd.IDM_SEARCH_FIND);
                 SendKeys.SendWait("^{v}");
             }
             else if ((ModifierKeys & Keys.Shift) == Keys.Shift)
