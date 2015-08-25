@@ -119,5 +119,9 @@ namespace NppQuickSearchPanel
             }
         }
         #endregion
+
+        public static int getDlgId() {
+            return idMyDlg;
+        }
     }
 }

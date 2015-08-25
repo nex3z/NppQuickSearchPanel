@@ -262,7 +262,8 @@ namespace NppQuickSearchPanel
 
             string listFileName = Path.Combine(Settings.ConfigDir, Main.PluginName + ".xml");
             SaveListToFile(listFileName);
-        }
+
+       }
 
         private void lstEntry_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -272,6 +273,14 @@ namespace NppQuickSearchPanel
             txtKeywords.Text = entryList[index].Keywords;
             rbtnRegExp.Checked = entryList[index].Type == KeywordsType.RegExp;
             rbtnNromal.Checked = !rbtnRegExp.Checked;
+        }
+
+        private void frmQuickSearch_VisibleChanged(object sender, EventArgs e)
+        {
+            if (!this.Visible)
+            {
+                Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_SETMENUITEMCHECK, PluginBase._funcItems.Items[Main.getDlgId()]._cmdID, 0);
+            }
         }
     }
 }

@@ -288,6 +288,7 @@
             this.Name = "frmQuickSearch";
             this.Text = "Quick Search Panel";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmQuickSearch_FormClosing);
+            this.VisibleChanged += new System.EventHandler(this.frmQuickSearch_VisibleChanged);
             this.tlpDlg.ResumeLayout(false);
             this.tlpDlg.PerformLayout();
             this.flpMatchOption.ResumeLayout(false);
