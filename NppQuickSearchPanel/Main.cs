@@ -45,14 +45,16 @@ namespace NppQuickSearchPanel
         }
         internal static void PluginCleanUp()
         {
-            if (frmMain.Visible)
-                Settings.Configs.showOnStartup = true;
-            else
-                Settings.Configs.showOnStartup = false;
-
             if (frmMain != null)
+            {
+                if (frmMain.Visible)
+                    Settings.Configs.showOnStartup = true;
+                else
+                    Settings.Configs.showOnStartup = false;
+                
                 frmMain.Close();
-
+            }
+            
             SaveConfig(iniFilePath);
         }
         internal static void LoadConfig(string iniFilePath)
