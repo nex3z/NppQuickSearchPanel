@@ -133,6 +133,48 @@
   <ItemGroup>
     <None Include="Resources\accept.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_repeat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_page_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifier_bmp.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resultset_next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resultset_previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_bmp.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildProjectDirectory)\DllExport\NppPlugin.DllExport.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
