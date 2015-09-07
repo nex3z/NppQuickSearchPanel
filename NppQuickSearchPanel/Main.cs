@@ -72,7 +72,9 @@ namespace NppQuickSearchPanel
         #region " Menu functions "
         internal static void ShowHelp()
         {
-            MessageBox.Show("NppQuickSearchPanel v" + PluginVersion + "\nCreated by Tianxing Li ( litianxing9@gmail.com )");
+            // MessageBox.Show("NppQuickSearchPanel v" + PluginVersion + "\nCreated by Tianxing Li ( litianxing9@gmail.com )");
+            frmAbout about = new frmAbout();
+            about.Show();
         }
         internal static void ShowMain()
         {
