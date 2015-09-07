@@ -14,6 +14,8 @@ namespace NppQuickSearchPanel
         {
             InitializeComponent();
             this.Text = String.Format("About {0}", AssemblyTitle);
+            string rtf = NppQuickSearchPanel.Properties.Resources.help;
+            rtxtHelp.Rtf = rtf;
         }
 
         #region Assembly Attribute Accessors

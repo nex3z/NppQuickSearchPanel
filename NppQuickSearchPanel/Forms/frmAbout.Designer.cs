@@ -47,7 +47,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(417, 279);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(539, 370);
             this.tableLayoutPanel1.TabIndex = 26;
             // 
             // rtxtHelp
@@ -55,7 +55,7 @@
             this.rtxtHelp.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rtxtHelp.Location = new System.Drawing.Point(3, 3);
             this.rtxtHelp.Name = "rtxtHelp";
-            this.rtxtHelp.Size = new System.Drawing.Size(411, 237);
+            this.rtxtHelp.Size = new System.Drawing.Size(533, 328);
             this.rtxtHelp.TabIndex = 26;
             this.rtxtHelp.Text = "";
             // 
@@ -65,14 +65,14 @@
             this.flowLayoutPanel1.Controls.Add(this.btnOK);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 246);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 337);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(411, 30);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(533, 30);
             this.flowLayoutPanel1.TabIndex = 27;
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(333, 3);
+            this.btnOK.Location = new System.Drawing.Point(455, 3);
             this.btnOK.Name = "btnOK";
             this.btnOK.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnOK.Size = new System.Drawing.Size(75, 23);
@@ -84,7 +84,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(435, 297);
+            this.ClientSize = new System.Drawing.Size(557, 388);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;

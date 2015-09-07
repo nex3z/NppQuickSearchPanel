@@ -86,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\search.png" />
+    <None Include="Resources\help.rtf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\search_bmp.bmp" />
@@ -128,6 +129,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\delete_repeat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accept.png" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildProjectDirectory)\DllExport\NppPlugin.DllExport.targets" />
