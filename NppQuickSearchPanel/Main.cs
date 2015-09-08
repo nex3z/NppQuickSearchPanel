@@ -74,6 +74,7 @@ namespace NppQuickSearchPanel
         {
             // MessageBox.Show("NppQuickSearchPanel v" + PluginVersion + "\nCreated by Tianxing Li ( litianxing9@gmail.com )");
             frmAbout about = new frmAbout();
+            about.Text = "NppQuickSearchPanel v" + PluginVersion;
             about.Show();
         }
         internal static void ShowMain()
