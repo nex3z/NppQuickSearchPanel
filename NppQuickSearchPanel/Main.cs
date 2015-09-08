@@ -32,7 +32,7 @@ namespace NppQuickSearchPanel
             LoadConfig(iniFilePath);
 
             PluginBase.SetCommand(0, "Show QuickSearchPanel", ShowMain); idMyDlg = 0;
-            PluginBase.SetCommand(1, "Help && About", ShowHelp, new ShortcutKey(false, false, false, Keys.None));
+            PluginBase.SetCommand(1, "About", ShowHelp, new ShortcutKey(false, false, false, Keys.None));
         }
         internal static void SetToolBarIcon()
         {
@@ -75,7 +75,7 @@ namespace NppQuickSearchPanel
             // MessageBox.Show("NppQuickSearchPanel v" + PluginVersion + "\nCreated by Tianxing Li ( litianxing9@gmail.com )");
             frmAbout about = new frmAbout();
             about.Text = "NppQuickSearchPanel v" + PluginVersion;
-            about.Show();
+            about.ShowDialog();
         }
         internal static void ShowMain()
         {
