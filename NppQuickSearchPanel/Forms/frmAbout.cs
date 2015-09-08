@@ -14,8 +14,6 @@ namespace NppQuickSearchPanel
         {
             InitializeComponent();
             this.Text = String.Format("About {0}", AssemblyTitle);
-            string rtf = NppQuickSearchPanel.Properties.Resources.help;
-            rtxtHelp.Rtf = rtf;
         }
 
         #region Assembly Attribute Accessors
@@ -98,9 +96,15 @@ namespace NppQuickSearchPanel
         }
         #endregion
 
-        private void AboutBox1_Load(object sender, EventArgs e)
+        private void btnVisitSite_Click(object sender, EventArgs e)
         {
-
+            System.Diagnostics.Process.Start("http://nqsp.nex3z.com");
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

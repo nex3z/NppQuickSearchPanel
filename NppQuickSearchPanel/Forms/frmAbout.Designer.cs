@@ -27,65 +27,78 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.rtxtHelp = new System.Windows.Forms.RichTextBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnOK = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAbout));
+            this.tlpAbout = new System.Windows.Forms.TableLayoutPanel();
+            this.lblAbout = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnVisitSite = new System.Windows.Forms.Button();
+            this.tlpAbout.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // tlpAbout
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.rtxtHelp, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(9, 9);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(539, 370);
-            this.tableLayoutPanel1.TabIndex = 26;
+            this.tlpAbout.ColumnCount = 1;
+            this.tlpAbout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpAbout.Controls.Add(this.lblAbout, 0, 0);
+            this.tlpAbout.Controls.Add(this.panel1, 0, 1);
+            this.tlpAbout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpAbout.Location = new System.Drawing.Point(9, 9);
+            this.tlpAbout.Name = "tlpAbout";
+            this.tlpAbout.RowCount = 2;
+            this.tlpAbout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
+            this.tlpAbout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpAbout.Size = new System.Drawing.Size(284, 163);
+            this.tlpAbout.TabIndex = 0;
             // 
-            // rtxtHelp
+            // lblAbout
             // 
-            this.rtxtHelp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtxtHelp.Location = new System.Drawing.Point(3, 3);
-            this.rtxtHelp.Name = "rtxtHelp";
-            this.rtxtHelp.Size = new System.Drawing.Size(533, 328);
-            this.rtxtHelp.TabIndex = 26;
-            this.rtxtHelp.Text = "";
+            this.lblAbout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblAbout.Location = new System.Drawing.Point(3, 0);
+            this.lblAbout.Name = "lblAbout";
+            this.lblAbout.Size = new System.Drawing.Size(278, 108);
+            this.lblAbout.TabIndex = 0;
+            this.lblAbout.Text = resources.GetString("lblAbout.Text");
             // 
-            // flowLayoutPanel1
+            // panel1
             // 
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.Controls.Add(this.btnOK);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 337);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(533, 30);
-            this.flowLayoutPanel1.TabIndex = 27;
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel1.Controls.Add(this.btnClose);
+            this.panel1.Controls.Add(this.btnVisitSite);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 111);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(278, 49);
+            this.panel1.TabIndex = 1;
             // 
-            // btnOK
+            // btnClose
             // 
-            this.btnOK.Location = new System.Drawing.Point(455, 3);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnOK.Size = new System.Drawing.Size(75, 23);
-            this.btnOK.TabIndex = 0;
-            this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.Location = new System.Drawing.Point(200, 24);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnVisitSite
+            // 
+            this.btnVisitSite.Location = new System.Drawing.Point(3, 24);
+            this.btnVisitSite.Name = "btnVisitSite";
+            this.btnVisitSite.Size = new System.Drawing.Size(75, 23);
+            this.btnVisitSite.TabIndex = 0;
+            this.btnVisitSite.Text = "Visit site";
+            this.btnVisitSite.UseVisualStyleBackColor = true;
+            this.btnVisitSite.Click += new System.EventHandler(this.btnVisitSite_Click);
             // 
             // frmAbout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(557, 388);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.ClientSize = new System.Drawing.Size(302, 181);
+            this.Controls.Add(this.tlpAbout);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -95,20 +108,24 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "About & Help";
-            this.Load += new System.EventHandler(this.AboutBox1_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.tlpAbout.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.RichTextBox rtxtHelp;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.TableLayoutPanel tlpAbout;
+        private System.Windows.Forms.Label lblAbout;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnVisitSite;
+
+
+
+
+
 
     }
 }
