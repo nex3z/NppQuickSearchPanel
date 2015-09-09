@@ -85,53 +85,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\search.png" />
     <None Include="Resources\help.rtf" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Properties\search_bmp.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Properties\add.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Properties\delete.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Properties\disk.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Properties\folder_page_white.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Properties\magnifier.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Properties\magnifier_bmp.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Properties\page_find.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Properties\resultset_next.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Properties\resultset_previous.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Properties\arrow_down.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Properties\arrow_up.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\delete_repeat.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Properties\delete_repeat.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\accept.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\add.png" />
