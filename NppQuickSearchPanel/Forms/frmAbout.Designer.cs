@@ -36,7 +36,7 @@
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Location = new System.Drawing.Point(217, 165);
+            this.btnClose.Location = new System.Drawing.Point(203, 184);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 1;
@@ -46,7 +46,7 @@
             // 
             // btnVisitSite
             // 
-            this.btnVisitSite.Location = new System.Drawing.Point(12, 165);
+            this.btnVisitSite.Location = new System.Drawing.Point(12, 184);
             this.btnVisitSite.Name = "btnVisitSite";
             this.btnVisitSite.Size = new System.Drawing.Size(75, 23);
             this.btnVisitSite.TabIndex = 0;
@@ -56,10 +56,12 @@
             // 
             // lblAbout
             // 
+            this.lblAbout.AutoSize = true;
             this.lblAbout.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblAbout.Location = new System.Drawing.Point(9, 9);
+            this.lblAbout.MaximumSize = new System.Drawing.Size(280, 0);
             this.lblAbout.Name = "lblAbout";
-            this.lblAbout.Size = new System.Drawing.Size(286, 136);
+            this.lblAbout.Size = new System.Drawing.Size(273, 104);
             this.lblAbout.TabIndex = 2;
             this.lblAbout.Text = resources.GetString("lblAbout.Text");
             // 
@@ -67,7 +69,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(304, 196);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(290, 219);
             this.Controls.Add(this.lblAbout);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnVisitSite);
@@ -81,6 +84,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "About & Help";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
