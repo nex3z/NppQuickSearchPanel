@@ -171,6 +171,12 @@ namespace NppQuickSearchPanel
             this.ScrollCaret();
         }
 
+        public int GetLineFromPosition(int pos)
+        {
+            int line = (int)Win32.SendMessage(curScintilla, SciMsg.SCI_LINEFROMPOSITION, pos, 0);
+            return line;
+        }
+
         public void Dispose()
         {
             Dispose(true);
