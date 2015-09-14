@@ -188,6 +188,7 @@ namespace NppQuickSearchPanel
                 {
                     int pos = sci.SearchBackward(keywords.ToString(), 
                         keywords.Type == KeywordsType.RegExp, chkMatchWord.Checked, chkMatchCase.Checked, chkWrap.Checked);
+                    updateSearchResult(sci, pos);
                 }
             }
             else
@@ -198,8 +199,24 @@ namespace NppQuickSearchPanel
                     {
                         int pos = sci.SearchForward(keywords.ToString(),
                             keywords.Type == KeywordsType.RegExp, chkMatchWord.Checked, chkMatchCase.Checked, chkWrap.Checked);
+                        updateSearchResult(sci, pos);
                     }
                 }
+            }
+        }
+
+        private void updateSearchResult(Scintilla sci, int pos) 
+        {
+            if (pos < 0)
+            {
+                tsslSearchResult.Text = "Couldn't find the keyword.";
+                tsslSearchResult.ForeColor = Color.Red;
+            }
+            else
+            {
+                int line = sci.GetLineFromPosition(pos);
+                tsslSearchResult.Text = "Found at line " + (line + 1) + ".";
+                tsslSearchResult.ForeColor = Color.Green;
             }
         }
 
