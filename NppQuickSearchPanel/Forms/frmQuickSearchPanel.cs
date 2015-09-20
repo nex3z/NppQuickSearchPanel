@@ -172,6 +172,8 @@ namespace NppQuickSearchPanel
             {
                 isSelectedIndexChanged = true;
                 lastSelectedIndex = index;
+                tsslSearchResult.Text = "Click to search. Ctrl + Click to launch Find dialog.";
+                tsslSearchResult.ForeColor = Color.Black;
             }
 
             Entry keywords = entryList[index];
