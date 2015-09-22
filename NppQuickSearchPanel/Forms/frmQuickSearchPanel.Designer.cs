@@ -76,17 +76,16 @@
             this.tlpDlg.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpDlg.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpDlg.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDlg.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpDlg.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
-            this.tlpDlg.Size = new System.Drawing.Size(402, 538);
+            this.tlpDlg.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpDlg.Size = new System.Drawing.Size(402, 497);
             this.tlpDlg.TabIndex = 0;
             // 
             // txtKeywords
             // 
             this.txtKeywords.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtKeywords.Location = new System.Drawing.Point(3, 32);
+            this.txtKeywords.Location = new System.Drawing.Point(3, 31);
             this.txtKeywords.Name = "txtKeywords";
-            this.txtKeywords.Size = new System.Drawing.Size(396, 20);
+            this.txtKeywords.Size = new System.Drawing.Size(396, 21);
             this.txtKeywords.TabIndex = 1;
             this.txtKeywords.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtKeywords_KeyDown);
             // 
@@ -99,7 +98,7 @@
             this.flpMatchOption.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpMatchOption.Location = new System.Drawing.Point(3, 3);
             this.flpMatchOption.Name = "flpMatchOption";
-            this.flpMatchOption.Size = new System.Drawing.Size(396, 23);
+            this.flpMatchOption.Size = new System.Drawing.Size(396, 22);
             this.flpMatchOption.TabIndex = 2;
             // 
             // chkMatchWord
@@ -107,7 +106,7 @@
             this.chkMatchWord.AutoSize = true;
             this.chkMatchWord.Location = new System.Drawing.Point(3, 3);
             this.chkMatchWord.Name = "chkMatchWord";
-            this.chkMatchWord.Size = new System.Drawing.Size(85, 17);
+            this.chkMatchWord.Size = new System.Drawing.Size(84, 16);
             this.chkMatchWord.TabIndex = 0;
             this.chkMatchWord.Text = "Match Word";
             this.chkMatchWord.UseVisualStyleBackColor = true;
@@ -115,9 +114,9 @@
             // chkMatchCase
             // 
             this.chkMatchCase.AutoSize = true;
-            this.chkMatchCase.Location = new System.Drawing.Point(94, 3);
+            this.chkMatchCase.Location = new System.Drawing.Point(93, 3);
             this.chkMatchCase.Name = "chkMatchCase";
-            this.chkMatchCase.Size = new System.Drawing.Size(83, 17);
+            this.chkMatchCase.Size = new System.Drawing.Size(84, 16);
             this.chkMatchCase.TabIndex = 1;
             this.chkMatchCase.Text = "Match Case";
             this.chkMatchCase.UseVisualStyleBackColor = true;
@@ -129,7 +128,7 @@
             this.chkWrap.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkWrap.Location = new System.Drawing.Point(183, 3);
             this.chkWrap.Name = "chkWrap";
-            this.chkWrap.Size = new System.Drawing.Size(89, 17);
+            this.chkWrap.Size = new System.Drawing.Size(90, 16);
             this.chkWrap.TabIndex = 2;
             this.chkWrap.Text = "Wrap Search";
             this.chkWrap.UseVisualStyleBackColor = true;
@@ -142,7 +141,7 @@
             this.flpSearchMode.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpSearchMode.Location = new System.Drawing.Point(3, 58);
             this.flpSearchMode.Name = "flpSearchMode";
-            this.flpSearchMode.Size = new System.Drawing.Size(396, 23);
+            this.flpSearchMode.Size = new System.Drawing.Size(396, 22);
             this.flpSearchMode.TabIndex = 4;
             // 
             // rbtnNromal
@@ -151,7 +150,7 @@
             this.rbtnNromal.Checked = true;
             this.rbtnNromal.Location = new System.Drawing.Point(3, 3);
             this.rbtnNromal.Name = "rbtnNromal";
-            this.rbtnNromal.Size = new System.Drawing.Size(58, 17);
+            this.rbtnNromal.Size = new System.Drawing.Size(59, 16);
             this.rbtnNromal.TabIndex = 0;
             this.rbtnNromal.TabStop = true;
             this.rbtnNromal.Text = "Normal";
@@ -160,9 +159,9 @@
             // rbtnRegExp
             // 
             this.rbtnRegExp.AutoSize = true;
-            this.rbtnRegExp.Location = new System.Drawing.Point(67, 3);
+            this.rbtnRegExp.Location = new System.Drawing.Point(68, 3);
             this.rbtnRegExp.Name = "rbtnRegExp";
-            this.rbtnRegExp.Size = new System.Drawing.Size(116, 17);
+            this.rbtnRegExp.Size = new System.Drawing.Size(131, 16);
             this.rbtnRegExp.TabIndex = 1;
             this.rbtnRegExp.Text = "Regular Expression";
             this.rbtnRegExp.UseVisualStyleBackColor = true;
@@ -175,9 +174,9 @@
             this.lstEntry.FormattingEnabled = true;
             this.lstEntry.HorizontalScrollbar = true;
             this.lstEntry.ItemHeight = 14;
-            this.lstEntry.Location = new System.Drawing.Point(3, 110);
+            this.lstEntry.Location = new System.Drawing.Point(3, 109);
             this.lstEntry.Name = "lstEntry";
-            this.lstEntry.Size = new System.Drawing.Size(396, 405);
+            this.lstEntry.Size = new System.Drawing.Size(396, 363);
             this.lstEntry.TabIndex = 8;
             this.lstEntry.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.lstEntry_DrawItem);
             this.lstEntry.SelectedIndexChanged += new System.EventHandler(this.lstEntry_SelectedIndexChanged);
@@ -198,7 +197,7 @@
             this.tsbImport,
             this.tsbExport});
             this.tsListMgmt.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.tsListMgmt.Location = new System.Drawing.Point(0, 84);
+            this.tsListMgmt.Location = new System.Drawing.Point(0, 83);
             this.tsListMgmt.Name = "tsListMgmt";
             this.tsListMgmt.Size = new System.Drawing.Size(402, 23);
             this.tsListMgmt.TabIndex = 9;
@@ -288,25 +287,25 @@
             // 
             this.ssSearchResult.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsslSearchResult});
-            this.ssSearchResult.Location = new System.Drawing.Point(0, 518);
+            this.ssSearchResult.Location = new System.Drawing.Point(0, 475);
             this.ssSearchResult.Name = "ssSearchResult";
-            this.ssSearchResult.Size = new System.Drawing.Size(402, 20);
+            this.ssSearchResult.Size = new System.Drawing.Size(402, 22);
             this.ssSearchResult.TabIndex = 10;
             this.ssSearchResult.Text = "statusStrip1";
             // 
             // tsslSearchResult
             // 
             this.tsslSearchResult.Name = "tsslSearchResult";
-            this.tsslSearchResult.Size = new System.Drawing.Size(356, 15);
+            this.tsslSearchResult.Size = new System.Drawing.Size(387, 17);
             this.tsslSearchResult.Spring = true;
             this.tsslSearchResult.Text = "Click to search. Ctrl + Click to launch Find dialog.";
             this.tsslSearchResult.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // frmQuickSearch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(402, 538);
+            this.ClientSize = new System.Drawing.Size(402, 497);
             this.Controls.Add(this.tlpDlg);
             this.Name = "frmQuickSearch";
             this.Text = "Quick Search Panel";
