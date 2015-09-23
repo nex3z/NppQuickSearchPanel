@@ -73,7 +73,7 @@ namespace NppQuickSearchPanel
         internal static void ShowHelp()
         {
             frmAbout about = new frmAbout();
-            about.Text = "NppQuickSearchPanel v" + PluginVersion;
+            about.Text = PluginName + " v" + PluginVersion;
             about.ShowDialog();
         }
         internal static void ShowMain()
