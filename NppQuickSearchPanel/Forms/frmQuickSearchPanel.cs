@@ -186,38 +186,34 @@ namespace NppQuickSearchPanel
             }
             else if ((ModifierKeys & Keys.Shift) == Keys.Shift)
             {
-                using(Scintilla sci = new Scintilla())
-                {
-                    int pos = sci.SearchBackward(keywords.ToString(), 
-                        keywords.Type == KeywordsType.RegExp, chkMatchWord.Checked, chkMatchCase.Checked, chkWrap.Checked);
-                    updateSearchResult(sci, pos);
-                }
+                SearchQuery search = new SciSearchQuery(
+                    keywords, 
+                    new SearchParameters(chkMatchCase.Checked, chkMatchWord.Checked, chkWrap.Checked));
+                SearchResult result = search.SearchBackward();
+                updateSearchResult(result);
             }
             else
             {
                 if (!isSelectedIndexChanged)
                 {
-                    using (Scintilla sci = new Scintilla())
-                    {
-                        int pos = sci.SearchForward(keywords.ToString(),
-                            keywords.Type == KeywordsType.RegExp, chkMatchWord.Checked, chkMatchCase.Checked, chkWrap.Checked);
-                        updateSearchResult(sci, pos);
-                    }
+                    SearchQuery search = new SciSearchQuery(
+                        keywords,
+                        new SearchParameters(chkMatchCase.Checked, chkMatchWord.Checked, chkWrap.Checked));
+                    SearchResult result = search.SearchForward();
+                    updateSearchResult(result);
                 }
             }
         }
-
-        private void updateSearchResult(Scintilla sci, int pos) 
+        private void updateSearchResult(SearchResult result)
         {
-            if (pos < 0)
+            if (result.Position < 0)
             {
                 tsslSearchResult.Text = "Couldn't find the keyword.";
                 tsslSearchResult.ForeColor = Color.Red;
             }
             else
             {
-                int line = sci.GetLineFromPosition(pos);
-                tsslSearchResult.Text = "Found at line " + (line + 1) + ".";
+                tsslSearchResult.Text = "Found at line " + (result.LineNumber + 1) + ".";
                 tsslSearchResult.ForeColor = Color.Green;
             }
         }

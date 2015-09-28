@@ -68,6 +68,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Scintilla.cs" />
+    <Compile Include="SciSearchQuery.cs" />
+    <Compile Include="SearchParameters.cs" />
+    <Compile Include="SearchQuery.cs" />
+    <Compile Include="SearchResult.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="UnmanagedExports.cs" />
   </ItemGroup>
