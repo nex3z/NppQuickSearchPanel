@@ -15,6 +15,8 @@ namespace NppQuickSearchPanel
     {
         BindingList<Entry> entryList = new BindingList<Entry>();
         int lastSelectedIndex = -1;
+        bool combineMode = false;
+        string combinedSearchText = "";
 
         public frmQuickSearch()
         {
@@ -176,11 +178,24 @@ namespace NppQuickSearchPanel
                 tsslSearchResult.ForeColor = Color.Black;
             }
 
-            Entry keywords = entryList[index];
+            Entry keyword = entryList[index];
+            if (combineMode)
+            {
+                if (combinedSearchText == "")
+                {
+                    combinedSearchText = "(" + keyword + ")";
+                }
+                else
+                {
+                    combinedSearchText = combinedSearchText + "|(" + keyword + ")";
+                }
+                
+                tsslSearchResult.Text = "Combine: " + combinedSearchText;
+            }
             if ((ModifierKeys & Keys.Control) == Keys.Control)
             {
                 lstEntry.SetSelected(index, true);
-                Clipboard.SetText(keywords.ToString());
+                Clipboard.SetText(keyword.ToString());
                 Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_MENUCOMMAND, 0, NppMenuCmd.IDM_SEARCH_FIND);
                 SendKeys.SendWait("^{v}");
             }
@@ -188,8 +203,8 @@ namespace NppQuickSearchPanel
             {
                 using(Scintilla sci = new Scintilla())
                 {
-                    int pos = sci.SearchBackward(keywords.ToString(), 
-                        keywords.Type == KeywordsType.RegExp, chkMatchWord.Checked, chkMatchCase.Checked, chkWrap.Checked);
+                    int pos = sci.SearchBackward(keyword.ToString(), 
+                        keyword.Type == KeywordsType.RegExp, chkMatchWord.Checked, chkMatchCase.Checked, chkWrap.Checked);
                     updateSearchResult(sci, pos);
                 }
             }
@@ -199,8 +214,8 @@ namespace NppQuickSearchPanel
                 {
                     using (Scintilla sci = new Scintilla())
                     {
-                        int pos = sci.SearchForward(keywords.ToString(),
-                            keywords.Type == KeywordsType.RegExp, chkMatchWord.Checked, chkMatchCase.Checked, chkWrap.Checked);
+                        int pos = sci.SearchForward(keyword.ToString(),
+                            keyword.Type == KeywordsType.RegExp, chkMatchWord.Checked, chkMatchCase.Checked, chkWrap.Checked);
                         updateSearchResult(sci, pos);
                     }
                 }
@@ -229,6 +244,24 @@ namespace NppQuickSearchPanel
                 int index = lstEntry.SelectedIndex;
                 if (index >= 0)
                     entryList.RemoveAt(index);
+            }
+            else if (e.KeyCode == Keys.Tab)
+            {
+                if (combineMode)
+                {
+                    tsslSearchResult.Text = "";
+                    Clipboard.SetText(combinedSearchText);
+                    Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_MENUCOMMAND, 0, NppMenuCmd.IDM_SEARCH_FIND);
+                    SendKeys.SendWait("^{v}");
+                }
+                else
+                {
+                    tsslSearchResult.Text = "Combine: ";
+                    combinedSearchText = "";
+                }
+                combineMode = !combineMode;
+                // MessageBox.Show("Alt is down");
+                e.Handled = true;
             }
         }
 
