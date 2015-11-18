@@ -34,9 +34,9 @@ Open up Notepad++, click the ![pluginicon][2]**Show QuickSearchPanel** button in
 
 ## How to build
 
-Build with Visual Studio 2013 or later. If you encounter a "The system cannot find the file specified" error when building the project, add the location of **NETFX 4.5.1 Tools** to your **Path** environment variable. 
+Build with Visual Studio 2013 or later. If you encounter a "The system cannot find the file specified" error when building the project, add the location of **NETFX Tools** to your **Path** environment variable. 
 
-For 64-bit system, the typical location of **NETFX 4.5.1 Tools** is 
+For 64-bit system and Visual Studio 2013, the typical location of **NETFX Tools** is 
 ```
 C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools
 ```
@@ -50,7 +50,6 @@ C:\Program Files\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools
 ## Contributors
 
 - [nex3z](https://github.com/nex3z)
-
 - [June3Ningxu](https://github.com/June3Ningxu)
 
 
