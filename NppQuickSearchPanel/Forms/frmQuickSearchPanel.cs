@@ -250,9 +250,12 @@ namespace NppQuickSearchPanel
                 if (combineMode)
                 {
                     tsslSearchResult.Text = "";
-                    Clipboard.SetText(combinedSearchText);
-                    Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_MENUCOMMAND, 0, NppMenuCmd.IDM_SEARCH_FIND);
-                    SendKeys.SendWait("^{v}");
+                    if (combinedSearchText != "")
+                    {
+                        Clipboard.SetText(combinedSearchText);
+                        Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_MENUCOMMAND, 0, NppMenuCmd.IDM_SEARCH_FIND);
+                        SendKeys.SendWait("^{v}");
+                    }
                 }
                 else
                 {
@@ -260,7 +263,6 @@ namespace NppQuickSearchPanel
                     combinedSearchText = "";
                 }
                 combineMode = !combineMode;
-                // MessageBox.Show("Alt is down");
                 e.Handled = true;
             }
         }
