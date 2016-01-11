@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tlpDlg = new System.Windows.Forms.TableLayoutPanel();
             this.txtKeywords = new System.Windows.Forms.TextBox();
             this.flpMatchOption = new System.Windows.Forms.FlowLayoutPanel();
@@ -50,6 +51,7 @@
             this.tsbExport = new System.Windows.Forms.ToolStripButton();
             this.ssSearchResult = new System.Windows.Forms.StatusStrip();
             this.tsslSearchResult = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tpList = new System.Windows.Forms.ToolTip(this.components);
             this.tlpDlg.SuspendLayout();
             this.flpMatchOption.SuspendLayout();
             this.flpSearchMode.SuspendLayout();
@@ -182,6 +184,7 @@
             this.lstEntry.SelectedIndexChanged += new System.EventHandler(this.lstEntry_SelectedIndexChanged);
             this.lstEntry.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lstEntry_KeyDown);
             this.lstEntry.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lstEntry_MouseDown);
+            this.lstEntry.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lstEntry_MouseMove);
             // 
             // tsListMgmt
             // 
@@ -349,6 +352,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.StatusStrip ssSearchResult;
         private System.Windows.Forms.ToolStripStatusLabel tsslSearchResult;
+        private System.Windows.Forms.ToolTip tpList;
 
     }
 }

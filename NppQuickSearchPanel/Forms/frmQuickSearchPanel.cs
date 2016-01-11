@@ -17,6 +17,7 @@ namespace NppQuickSearchPanel
         int lastSelectedIndex = -1;
         bool combineMode = false;
         string combinedSearchText = "";
+        int lastHoveredIndex = -1;
 
         public frmQuickSearch()
         {
@@ -334,6 +335,19 @@ namespace NppQuickSearchPanel
             if (!this.Visible)
             {
                 Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_SETMENUITEMCHECK, PluginBase._funcItems.Items[Main.getDlgId()]._cmdID, 0);
+            }
+        }
+
+        private void lstEntry_MouseMove(object sender, MouseEventArgs e)
+        {
+            Point screenPosition = ListBox.MousePosition;
+            Point listBoxClientAreaPosition = lstEntry.PointToClient(screenPosition);
+
+            int hoveredIndex = lstEntry.IndexFromPoint(listBoxClientAreaPosition);
+            if (hoveredIndex >= 0 && hoveredIndex != lastHoveredIndex)
+            {
+                tpList.SetToolTip(lstEntry, entryList[hoveredIndex].Keywords);
+                lastHoveredIndex = hoveredIndex;
             }
         }
     }
