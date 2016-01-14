@@ -344,10 +344,19 @@ namespace NppQuickSearchPanel
             Point listBoxClientAreaPosition = lstEntry.PointToClient(screenPosition);
 
             int hoveredIndex = lstEntry.IndexFromPoint(listBoxClientAreaPosition);
+
             if (hoveredIndex >= 0 && hoveredIndex != lastHoveredIndex)
             {
-                tpList.SetToolTip(lstEntry, entryList[hoveredIndex].Keywords);
-                lastHoveredIndex = hoveredIndex;
+                tpList.Hide(lstEntry);
+
+                Graphics g = lstEntry.CreateGraphics();
+                int itemWidth = (int)g.MeasureString(lstEntry.Items[hoveredIndex].ToString(), lstEntry.Font).Width;
+                int listWidth = lstEntry.Width;
+                if (itemWidth > listWidth)
+                {
+                    tpList.SetToolTip(lstEntry, entryList[hoveredIndex].Keywords);
+                    lastHoveredIndex = hoveredIndex;
+                }
             }
         }
     }

@@ -304,6 +304,12 @@
             this.tsslSearchResult.Text = "Click to search. Ctrl + Click to launch Find dialog.";
             this.tsslSearchResult.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // tpList
+            // 
+            this.tpList.AutoPopDelay = 5000;
+            this.tpList.InitialDelay = 500;
+            this.tpList.ReshowDelay = 100;
+            // 
             // frmQuickSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
