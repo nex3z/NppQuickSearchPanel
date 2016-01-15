@@ -166,58 +166,61 @@ namespace NppQuickSearchPanel
 
         private void lstEntry_MouseDown(object sender, MouseEventArgs e)
         {
-            int index = lstEntry.IndexFromPoint(e.X, e.Y);
-            bool isSelectedIndexChanged = false;
-
-            if (index < 0)
-                return;
-            else if (index != lastSelectedIndex)
+            if (e.Button == MouseButtons.Left)
             {
-                isSelectedIndexChanged = true;
-                lastSelectedIndex = index;
-                tsslSearchResult.Text = "Click to search. Ctrl + Click to launch Find dialog.";
-                tsslSearchResult.ForeColor = Color.Black;
-            }
+                int index = lstEntry.IndexFromPoint(e.X, e.Y);
+                bool isSelectedIndexChanged = false;
 
-            Entry keyword = entryList[index];
-            if (combineMode)
-            {
-                if (combinedSearchText == "")
+                if (index < 0)
+                    return;
+                else if (index != lastSelectedIndex)
                 {
-                    combinedSearchText = "(" + keyword + ")";
+                    isSelectedIndexChanged = true;
+                    lastSelectedIndex = index;
+                    tsslSearchResult.Text = "Click to search. Ctrl + Click to launch Find dialog.";
+                    tsslSearchResult.ForeColor = Color.Black;
+                }
+
+                Entry keyword = entryList[index];
+                if (combineMode)
+                {
+                    if (combinedSearchText == "")
+                    {
+                        combinedSearchText = "(" + keyword + ")";
+                    }
+                    else
+                    {
+                        combinedSearchText = combinedSearchText + "|(" + keyword + ")";
+                    }
+                
+                    tsslSearchResult.Text = "Combine: " + combinedSearchText;
+                }
+                if ((ModifierKeys & Keys.Control) == Keys.Control)
+                {
+                    lstEntry.SetSelected(index, true);
+                    Clipboard.SetText(keyword.ToString());
+                    Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_MENUCOMMAND, 0, NppMenuCmd.IDM_SEARCH_FIND);
+                    SendKeys.SendWait("^{v}");
+                }
+                else if ((ModifierKeys & Keys.Shift) == Keys.Shift)
+                {
+                    using(Scintilla sci = new Scintilla())
+                    {
+                        int pos = sci.SearchBackward(keyword.ToString(), 
+                            keyword.Type == KeywordsType.RegExp, chkMatchWord.Checked, chkMatchCase.Checked, chkWrap.Checked);
+                        updateSearchResult(sci, pos);
+                    }
                 }
                 else
                 {
-                    combinedSearchText = combinedSearchText + "|(" + keyword + ")";
-                }
-                
-                tsslSearchResult.Text = "Combine: " + combinedSearchText;
-            }
-            if ((ModifierKeys & Keys.Control) == Keys.Control)
-            {
-                lstEntry.SetSelected(index, true);
-                Clipboard.SetText(keyword.ToString());
-                Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_MENUCOMMAND, 0, NppMenuCmd.IDM_SEARCH_FIND);
-                SendKeys.SendWait("^{v}");
-            }
-            else if ((ModifierKeys & Keys.Shift) == Keys.Shift)
-            {
-                using(Scintilla sci = new Scintilla())
-                {
-                    int pos = sci.SearchBackward(keyword.ToString(), 
-                        keyword.Type == KeywordsType.RegExp, chkMatchWord.Checked, chkMatchCase.Checked, chkWrap.Checked);
-                    updateSearchResult(sci, pos);
-                }
-            }
-            else
-            {
-                if (!isSelectedIndexChanged)
-                {
-                    using (Scintilla sci = new Scintilla())
+                    if (!isSelectedIndexChanged)
                     {
-                        int pos = sci.SearchForward(keyword.ToString(),
-                            keyword.Type == KeywordsType.RegExp, chkMatchWord.Checked, chkMatchCase.Checked, chkWrap.Checked);
-                        updateSearchResult(sci, pos);
+                        using (Scintilla sci = new Scintilla())
+                        {
+                            int pos = sci.SearchForward(keyword.ToString(),
+                                keyword.Type == KeywordsType.RegExp, chkMatchWord.Checked, chkMatchCase.Checked, chkWrap.Checked);
+                            updateSearchResult(sci, pos);
+                        }
                     }
                 }
             }
