@@ -40,18 +40,18 @@
             this.rbtnRegExp = new System.Windows.Forms.RadioButton();
             this.lstEntry = new System.Windows.Forms.ListBox();
             this.tsListMgmt = new System.Windows.Forms.ToolStrip();
-            this.tsbAdd = new System.Windows.Forms.ToolStripButton();
-            this.tsbRemove = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbMoveUp = new System.Windows.Forms.ToolStripButton();
-            this.tsbMoveDown = new System.Windows.Forms.ToolStripButton();
-            this.tsbRemoveDuplItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbImport = new System.Windows.Forms.ToolStripButton();
-            this.tsbExport = new System.Windows.Forms.ToolStripButton();
             this.ssSearchResult = new System.Windows.Forms.StatusStrip();
             this.tsslSearchResult = new System.Windows.Forms.ToolStripStatusLabel();
             this.tpList = new System.Windows.Forms.ToolTip(this.components);
+            this.tsbAdd = new System.Windows.Forms.ToolStripButton();
+            this.tsbRemove = new System.Windows.Forms.ToolStripButton();
+            this.tsbMoveUp = new System.Windows.Forms.ToolStripButton();
+            this.tsbMoveDown = new System.Windows.Forms.ToolStripButton();
+            this.tsbRemoveDuplItem = new System.Windows.Forms.ToolStripButton();
+            this.tsbImport = new System.Windows.Forms.ToolStripButton();
+            this.tsbExport = new System.Windows.Forms.ToolStripButton();
             this.tlpDlg.SuspendLayout();
             this.flpMatchOption.SuspendLayout();
             this.flpSearchMode.SuspendLayout();
@@ -206,6 +206,40 @@
             this.tsListMgmt.TabIndex = 9;
             this.tsListMgmt.Text = "toolStrip1";
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 23);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 23);
+            // 
+            // ssSearchResult
+            // 
+            this.ssSearchResult.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsslSearchResult});
+            this.ssSearchResult.Location = new System.Drawing.Point(0, 475);
+            this.ssSearchResult.Name = "ssSearchResult";
+            this.ssSearchResult.Size = new System.Drawing.Size(402, 22);
+            this.ssSearchResult.TabIndex = 10;
+            this.ssSearchResult.Text = "statusStrip1";
+            // 
+            // tsslSearchResult
+            // 
+            this.tsslSearchResult.Name = "tsslSearchResult";
+            this.tsslSearchResult.Size = new System.Drawing.Size(387, 17);
+            this.tsslSearchResult.Spring = true;
+            this.tsslSearchResult.Text = "Click to search. Ctrl + Click to launch Find dialog.";
+            this.tsslSearchResult.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tpList
+            // 
+            this.tpList.AutoPopDelay = 5000;
+            this.tpList.InitialDelay = 500;
+            this.tpList.ReshowDelay = 100;
+            // 
             // tsbAdd
             // 
             this.tsbAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -225,11 +259,6 @@
             this.tsbRemove.Size = new System.Drawing.Size(23, 20);
             this.tsbRemove.Text = "Remove";
             this.tsbRemove.Click += new System.EventHandler(this.tsbRemove_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 23);
             // 
             // tsbMoveUp
             // 
@@ -261,11 +290,6 @@
             this.tsbRemoveDuplItem.Text = "Remove duplicates";
             this.tsbRemoveDuplItem.Click += new System.EventHandler(this.tsbRemoveDuplItem_Click);
             // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 23);
-            // 
             // tsbImport
             // 
             this.tsbImport.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -279,36 +303,12 @@
             // tsbExport
             // 
             this.tsbExport.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbExport.Image = global::NppQuickSearchPanel.Properties.Resources.disk;
+            this.tsbExport.Image = global::NppQuickSearchPanel.Properties.Resources.report_disk;
             this.tsbExport.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbExport.Name = "tsbExport";
             this.tsbExport.Size = new System.Drawing.Size(23, 20);
             this.tsbExport.Text = "Export";
             this.tsbExport.Click += new System.EventHandler(this.tsbExport_Click);
-            // 
-            // ssSearchResult
-            // 
-            this.ssSearchResult.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsslSearchResult});
-            this.ssSearchResult.Location = new System.Drawing.Point(0, 475);
-            this.ssSearchResult.Name = "ssSearchResult";
-            this.ssSearchResult.Size = new System.Drawing.Size(402, 22);
-            this.ssSearchResult.TabIndex = 10;
-            this.ssSearchResult.Text = "statusStrip1";
-            // 
-            // tsslSearchResult
-            // 
-            this.tsslSearchResult.Name = "tsslSearchResult";
-            this.tsslSearchResult.Size = new System.Drawing.Size(387, 17);
-            this.tsslSearchResult.Spring = true;
-            this.tsslSearchResult.Text = "Click to search. Ctrl + Click to launch Find dialog.";
-            this.tsslSearchResult.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // tpList
-            // 
-            this.tpList.AutoPopDelay = 5000;
-            this.tpList.InitialDelay = 500;
-            this.tpList.ReshowDelay = 100;
             // 
             // frmQuickSearch
             // 
