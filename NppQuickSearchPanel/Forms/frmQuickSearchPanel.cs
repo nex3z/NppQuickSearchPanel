@@ -355,7 +355,14 @@ namespace NppQuickSearchPanel
                 Graphics g = lstEntry.CreateGraphics();
                 int itemWidth = (int)g.MeasureString(lstEntry.Items[hoveredIndex].ToString(), lstEntry.Font).Width;
                 int listWidth = lstEntry.Width;
-                if (itemWidth > listWidth)
+
+                int visiableItems = lstEntry.ClientSize.Height / lstEntry.ItemHeight;
+                if (lstEntry.Items.Count > visiableItems)
+                {
+                    listWidth -= System.Windows.Forms.SystemInformation.VerticalScrollBarWidth; 
+                }
+
+                if (itemWidth >= listWidth)
                 {
                     tpList.SetToolTip(lstEntry, entryList[hoveredIndex].Keywords);
                     lastHoveredIndex = hoveredIndex;
