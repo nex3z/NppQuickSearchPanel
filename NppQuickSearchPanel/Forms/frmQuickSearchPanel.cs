@@ -268,6 +268,7 @@ namespace NppQuickSearchPanel
                 else
                 {
                     tsslSearchResult.Text = "Combine: ";
+                    tsslSearchResult.ForeColor = Color.Black;
                     combinedSearchText = "";
                 }
                 combineMode = !combineMode;
