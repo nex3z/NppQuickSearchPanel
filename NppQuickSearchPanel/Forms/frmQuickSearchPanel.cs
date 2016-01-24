@@ -182,6 +182,7 @@ namespace NppQuickSearchPanel
                 }
 
                 Entry keyword = entryList[index];
+
                 if (combineMode)
                 {
                     if (combinedSearchText == "")
@@ -192,9 +193,12 @@ namespace NppQuickSearchPanel
                     {
                         combinedSearchText = combinedSearchText + "|(" + keyword + ")";
                     }
-                
+
                     tsslSearchResult.Text = "Combine: " + combinedSearchText;
+
+                    return;
                 }
+
                 if ((ModifierKeys & Keys.Control) == Keys.Control)
                 {
                     lstEntry.SetSelected(index, true);
