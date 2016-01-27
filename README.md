@@ -72,7 +72,7 @@ For more information, please refer to the [official site][12].
   [5]: images/icons/arrow_up.png
   [6]: images/icons/arrow_down.png
   [7]: images/icons/folder_page_white.png
-  [8]: images/icons/disk.png
+  [8]: images/icons/report_disk.png
   [9]: http://sourceforge.net/projects/sourcecookifier/files/other%20plugins/
   [10]: http://www.famfamfam.com/    "famfamfam.com"
   [11]: http://creativecommons.org/licenses/by/2.5/    "Creative Commons Attribution 3.0 License"
