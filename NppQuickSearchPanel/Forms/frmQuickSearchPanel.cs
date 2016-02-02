@@ -93,22 +93,22 @@ namespace NppQuickSearchPanel
 
         private void PopulateListFromFile(string fileName)
         {
+            lstEntry.DataSource = null;
+            FileStream fs = new FileStream(fileName, FileMode.Open);
             try
             {
-                FileStream fs = new FileStream(fileName, FileMode.Open);
                 XmlSerializer ser = new XmlSerializer(typeof(BindingList<Entry>));
-
-                lstEntry.DataSource = null;
                 entryList = (BindingList<Entry>)ser.Deserialize(fs);
-                lstEntry.DataSource = entryList;
-
-                fs.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Open file error: " + ex.Message);
+                MessageBox.Show("Read file error: " + ex.Message + "\nPlease check " + fileName);
+                entryList = new BindingList<Entry>();
+            }
+            finally
+            {
+                fs.Close();
                 lstEntry.DataSource = entryList;
-                File.Delete(fileName);
             }
         }
 
