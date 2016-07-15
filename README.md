@@ -1,5 +1,8 @@
 # NppQuickSearchPanel
 
+NppQuickSearchPanel is deprecated. Please check [NppLogGazer](https://github.com/nex3z/NppLogGazer) for the QuickSearchPanel and more. Thanks for all your support!
+
+
 ## Description
 
 **NppQuickSearchPanel** is a notepad++ plugin which stores your favourite keywords in a list, providing fast and convenient searching. You can perform search on any keywords by a click.
